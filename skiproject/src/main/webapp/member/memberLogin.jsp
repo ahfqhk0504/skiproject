@@ -131,11 +131,11 @@
 		
 	<div class="login_button">
 		<input type="button"  class="login_btn" value="로그인">
-		<a href="#" class="member_find">아이디/비밀번호 찾기</a>
+		<a href="#" class="member_find">아이디/비밀번호 찾기</a> 
 		<a href="#" class="member_write">무료 회원가입</a>
 	</div>
 	<div class="login_bottom">
-		<a href="#" class="naver_login"><img src="../memberImg/naver.png" class="naver_img">네이버로 시작하기</a>
+		<a href="#" class="naver_login"><img src="../memberImg/naver.jpg"/>네이버로 시작하기</a>
 	</div>
 </div>
 </body>
