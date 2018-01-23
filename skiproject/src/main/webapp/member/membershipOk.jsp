@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-aab   bddda   aaa   jjj마지막 
+회원가입 완료 !!
 </body>
 </html>
