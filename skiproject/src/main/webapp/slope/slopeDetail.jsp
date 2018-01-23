@@ -125,11 +125,17 @@
 #slopeWrap .map{
 	position: relative;
 	width:750px;
-	height: 550px;
+	height: 650px;
 	border: 1px solid #333;
 	margin: 30px auto 0;
 }
-
+#slopeWrap .map .mapButtonWrap{
+	border: 1px solid #333;
+	float: left;
+	width: 750px;
+	height: 100px;
+	z-index: 9999; 
+}
 #slopeWrap{
 	position: relative;
     margin-left: 270px;
@@ -161,13 +167,15 @@
 	<p class="content">슬로프 운영 현황은 기상 상태 및 영업정책에 따라 변동될 수 있습니다. 밸리베이스, 밸리허브, 마운틴 탑 아이콘을 클릭하시면 기상정보가 안내됩니다.<br>
 	지도 위 빨간색 번호 버튼 또는 웹캠 안내 버튼을 클릭하시면, 슬로프 실시간 현황인 웹캠을 보실 수 있습니다.<br>
 	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	<div class="map">
+	<div class="map"><img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
+		<div class="mapButtonWrap">
+			 
+		</div>
 	</div>
 	<h4 class="contentTitle">슬로프 제원/현황</h4>
 	<hr class="ski" style="margin: 0 0 17px;">
 	<p class="content">운영시간: 오전 08:30~13:00 / 오후 12:00~16:00 / 야간 18:00~22:00<br>
 	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	
 	<table class="slopeTable">
 		<caption>슬로프제원/현황</caption>
 		<thead>
@@ -473,8 +481,7 @@
 			</tr>
 			<tr>
 				<th scope="row" class="tableTitle">하프파이프</th>
-				<!--<td>초급</td>-->
-                   <td>-</td>
+                <td>-</td>
 				<td>-</td>
 				<td>-</td>
 				<td>-</td>
