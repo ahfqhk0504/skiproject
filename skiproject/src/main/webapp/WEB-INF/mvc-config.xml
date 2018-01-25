@@ -16,6 +16,7 @@
 	</bean>
 	
 	<context:component-scan base-package="main.controller" />
+	<context:component-scan base-package="member.controller" />
 	<mvc:view-controller path="/main/index" view-name="/main/index" />
 	
 	

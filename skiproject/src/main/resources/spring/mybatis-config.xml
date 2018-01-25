@@ -6,5 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 	</typeAliases>
 	<mappers>
+		<mapper resource="member/dao/memberMapper.xml"/>
 	</mappers>
 </configuration>

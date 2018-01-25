@@ -133,6 +133,13 @@
 	.hide{
 		display: none; 
 	}
+	.memberDisplay label{
+		float: right;
+	    margin-right: 228px;
+	    margin-top: 116px;
+	    cursor: pointer;
+	}
+	
 	
 </style>
 
@@ -143,7 +150,7 @@
 	<h3>회원가입</h3>
 	<form name="membershipForm" method="post" action="/skiproject/member/membershipOk/">
 		<div class="memberDisplay">
-			<label><img="/"></label>
+			<label><img src="https://user-images.githubusercontent.com/35482994/35262301-694560aa-0057-11e8-82b9-85b0306e1ca7.png"></label>
 			<div class="emailPw">
 				<table>
 					<tr>
