@@ -63,9 +63,44 @@
 	padding: 0px;
 	border: 0px;
 	text-align: left;
+	font-size: 13px;
+}
+#slopeWrap .mapButtonWrap{
+	background: #0C4B70;
+}
+#slopeWrap .mapButtonWrap p.menu{
+	float: left;
+	border-left: 1px solid #333;
+	margin: 0 2px;
+}
+#slopeWrap .mapButtonWrap p.menu.first{
+	border: 0;
+}
+#slopeWrap .mapButtonWrap p.menu .title_eng{
+	font-weight: bold;
+	color: #fff;
 	font-size: 12px;
 }
+#slopeWrap .mapButtonWrap p.menu .title_kor{
+	color: #637C96;
+	font-weight: 700;
+	font-size: 14px;
+}
 
+#slopeWrap .mapButtonWrap p.menu .button{
+	width: 24px;
+    height: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    background: black;
+    color: #fff;
+    text-align: center;
+    display: block;
+    float: left;
+    margin-left: 3px;
+    padding-top: 1px;
+    cursor: pointer;
+}
 #slopeWrap .slopeTable span{
 	display: block;
 	width: 50px;
@@ -73,14 +108,16 @@
 	margin: auto;
 }
 #slopeWrap .slopeTable span.open{
-	background: #52c2c2;
-	border: 1px solid #52c2c2;
+	background: #0C4B70;
+	border: 1px solid #0C4B70;
 	color: #fff;
+	font-weight: 600;
 }
 #slopeWrap .slopeTable span.close{
 	color: #fff;
 	background: #c0c0c0;
 	border: 1px solid #c0c0c0;
+	font-weight: 600;
 }
 #slopeWrap table{
 	margin: 0;
@@ -129,6 +166,10 @@
 	border: 1px solid #333;
 	margin: 30px auto 0;
 }
+#slopeWrap .map .mapWrap{
+	width:750px;
+	height: 550px;
+}
 #slopeWrap .map .mapButtonWrap{
 	border: 1px solid #333;
 	float: left;
@@ -153,7 +194,115 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
 <script type="text/javascript">
-
+	$(document).ready(function(){
+		
+		$(".mapButtonWrap .menu .button").mouseleave(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg");
+		});
+		//제우스버튼
+		$(".zeus1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373882-ebf62e20-01e3-11e8-86e0-3195a947bedf.jpg");
+		});
+		$(".zeus2").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373889-f1a523bc-01e3-11e8-9ca4-f11cff133797.jpg");
+		});
+		$(".zeus3").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373891-f534e2c4-01e3-11e8-9db1-cce4044b51af.jpg");
+		});
+		$(".zeus3-1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373897-f9715098-01e3-11e8-93b5-08d48b59cbfc.jpg");
+		});
+		
+		//빅토리아 버튼
+		$(".victoria1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373900-fb93d01c-01e3-11e8-84c3-999e3fda6d5e.jpg");
+		});
+		$(".victoria2").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373901-fe1365c8-01e3-11e8-98fa-41bb8f6889a1.jpg");
+		});
+		$(".victoria3").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373916-03b01210-01e4-11e8-81b4-3f4dff86136f.jpg");
+		});
+		
+		//헤라 버튼
+		$(".hera1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373917-03d9c25e-01e4-11e8-81bb-e1ebb286773e.jpg");
+		});
+		$(".hera2").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373918-040d7022-01e4-11e8-9bd0-cc3df7485d0e.jpg");
+		});
+		$(".hera3").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373919-0437a3f6-01e4-11e8-8f1a-0a49ac959ed3.jpg");
+		});
+		
+		//아폴로 버튼
+		$(".apollo1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373920-046482c2-01e4-11e8-83e8-f02d4dc169e6.jpg");
+		});
+		$(".apollo2").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373921-048c44d8-01e4-11e8-9a9a-acc7c24a215f.jpg");
+		});
+		$(".apollo3").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373922-04b2641a-01e4-11e8-85b6-92fbc10a81e0.jpg");
+		});
+		$(".apollo4").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373923-04fd7e28-01e4-11e8-935a-018dcc1541ec.jpg");
+		});
+		$(".apollo5").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373924-0524d7fc-01e4-11e8-8992-5950e430e22f.jpg");
+		});
+		$(".apollo6").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373925-054d149c-01e4-11e8-8d51-7058f3c25b78.jpg");
+		});
+		
+		//아테나 버튼
+		$(".athena1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373926-0575e82c-01e4-11e8-8973-c9b1df726ced.jpg");
+		});
+		$(".athena2").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373927-059aa8ec-01e4-11e8-8f77-c81c586b0ea0.jpg");
+		});
+		$(".athena3").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373928-05d6c2aa-01e4-11e8-8ace-74571313302a.jpg");
+		});
+		$(".athena3-1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373906-025fe228-01e4-11e8-8ada-981ee619d80e.jpg");
+		});
+		
+		//눈 썰매장 버튼
+		$(".sled1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373907-028717a8-01e4-11e8-96eb-72b796545e71.jpg");
+		});
+		
+		//Terrain Park 버튼
+		$(".terrainPark1").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373908-02ae9012-01e4-11e8-93e6-d2f7d0576c89.jpg");
+		});
+		$(".terrainPark2").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373909-02e866c0-01e4-11e8-9cf9-4bf9f74b30cc.jpg");
+		});
+		$(".terrainPark3").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373911-032bc4c4-01e4-11e8-9698-90aa782e9ebd.jpg");
+		});
+		$(".terrainPark4").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373912-035b723c-01e4-11e8-9b38-277217ca46e0.jpg");
+		});
+		$(".terrainPark5").mouseenter(function(){
+			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373914-0386af74-01e4-11e8-9340-b35c10acd101.jpg");
+		});
+		//weather();
+	});
+	
+	function weather(){
+		$.ajax({
+			url : "http://api.openweathermap.org/data/2.5/weather?lat=&lon=&APPID=ba4d76378a980b7d67a15cf76735b65c",
+			dataType : "json",
+			success : function(data){
+				var wspd = data
+				$(".wspd").html(wspd);
+			}
+		});
+	}
 </script>
 
 <div id="slopeWrap">
@@ -167,9 +316,64 @@
 	<p class="content">슬로프 운영 현황은 기상 상태 및 영업정책에 따라 변동될 수 있습니다. 밸리베이스, 밸리허브, 마운틴 탑 아이콘을 클릭하시면 기상정보가 안내됩니다.<br>
 	지도 위 빨간색 번호 버튼 또는 웹캠 안내 버튼을 클릭하시면, 슬로프 실시간 현황인 웹캠을 보실 수 있습니다.<br>
 	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	<div class="map"><img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
+	<div class="map">
+		<div class="mapWrap">
+			<img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
+		</div>
 		<div class="mapButtonWrap">
-			 
+			 <p class="menu first">
+			 	<span class="title_eng">&nbsp;ZEUS<br></span>
+			 	<span class="title_kor">&nbsp;제우스</span><br><br>
+			 	<span class="zeus1 button">1</span>
+			 	<span class="zeus2 button">2</span>
+			 	<span class="zeus3 button">3</span>
+			 	<span class="zeus3-1 button">3-1</span>
+			 </p>
+			 <p class="menu">
+			 	<span class="title_eng">&nbsp;VICTORIA<br></span>
+			 	<span class="title_kor">&nbsp;빅토리아</span><br><br>
+			 	<span class="victoria1 button">1</span>
+			 	<span class="victoria2 button">2</span>
+			 	<span class="victoria3 button">3</span>
+			 </p>
+			 <p class="menu">
+			 	<span class="title_eng">&nbsp;HERA<br></span>
+			 	<span class="title_kor">&nbsp;헤라</span><br><br>
+			 	<span class="hera1 button">1</span>
+			 	<span class="hera2 button">2</span>
+			 	<span class="hera3 button">3</span>
+			 </p>
+			 <p class="menu">
+			 	<span class="title_eng">&nbsp;APOLLO<br></span>
+			 	<span class="title_kor">&nbsp;아폴로</span><br><br>
+			 	<span class="apollo1 button">1</span>
+			 	<span class="apollo2 button">2</span>
+			 	<span class="apollo3 button">3</span>
+			 	<span class="apollo4 button">4</span>
+			 	<span class="apollo5 button">5</span>
+			 	<span class="apollo6 button">6</span>
+			 </p>
+			 <p class="menu">
+			 	<span class="title_eng">&nbsp;ATHENA<br></span>
+			 	<span class="title_kor">&nbsp;아테나</span><br><br>
+			 	<span class="athena1 button">1</span>
+			 	<span class="athena2 button">2</span>
+			 	<span class="athena3 button">3</span>
+			 	<span class="athena3-1 button">3-1</span>
+			 </p>
+			 <p class="menu">
+			 	<span class="title_eng">&nbsp;SLED<br></span>
+			 	<span class="title_kor">&nbsp;눈썰매장</span><br><br>
+			 	<span class="sled1 button">1</span>
+			 </p>
+			 <p class="menu">
+			 	<span class="title_eng">&nbsp;TERRAIN PARK</span><br><br>
+			 	<span class="terrainPark1 button">초</span>
+			 	<span class="terrainPark2 button">중</span>
+			 	<span class="terrainPark3 button">상</span><br>
+			 	<span class="terrainPark4 button" style="width:58px;">하프파이프</span>
+			 	<span class="terrainPark5 button" style="width:27px;">모굴</span>
+			 </p>
 		</div>
 	</div>
 	<h4 class="contentTitle">슬로프 제원/현황</h4>
@@ -534,15 +738,15 @@
 	    </thead>
 		<tbody>
 			<tr>
-				<th scope="row">마운틴베이스</th>
+				<th scope="row">밸리 허브</th>
 				<td>-3.1℃</td>
 				<td>75%</td>
-				<td>2~3m/s</td>
+				<td class="wspd">2~3m/s</td>
 				<td>mm</td>
 				<td>mm</td>
 			</tr>
 			<tr>
-				<th scope="row">마운틴 허브</th>
+				<th scope="row">마운틴 탑</th>
 				<td>-3.7℃</td>
 				<td>83%</td>
 				<td>4~6m/s</td>
@@ -550,7 +754,7 @@
 				<td>mm</td>
 			</tr>
 			<tr>
-				<th scope="row">마운틴 탑</th>
+				<th scope="row">마운틴 허브</th>
 				<td>-6.2℃</td>
 				<td>82%</td>
 				<td>5~7m/s</td>
