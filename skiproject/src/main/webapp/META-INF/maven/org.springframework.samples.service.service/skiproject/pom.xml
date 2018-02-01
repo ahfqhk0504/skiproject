@@ -196,6 +196,18 @@
 			<version>4.3.6.RELEASE</version>
 		</dependency>
 		
+		<!-- json -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20160810</version>
+		</dependency>
+		
 	</dependencies>	
 	
 	<!-- oracle 저장소 -->

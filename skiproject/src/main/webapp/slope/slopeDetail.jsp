@@ -170,6 +170,9 @@
 	width:750px;
 	height: 550px;
 }
+#slopeWrap #reWeather{
+	float: right;
+}
 #slopeWrap .map .mapButtonWrap{
 	border: 1px solid #333;
 	float: left;
@@ -290,20 +293,105 @@
 		$(".terrainPark5").mouseenter(function(){
 			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35373914-0386af74-01e4-11e8-9340-b35c10acd101.jpg");
 		});
+		
+		
+		$("#reWeather").click(function(){
+			
+			var weatherName="";
+			var weatherLat="";
+			var weatherLon="";
+			$.ajax({
+				url : "/skiproject/slope/weatherInfo",
+				type : "GET",
+				dataType : "json",
+				success: function(data){
+					$(".slopeTable.weather tbody tr").remove();
+					$.each(data.weatherList, function(index, weatherDTO){
+						weatherName = weatherDTO.weatherName;
+						weatherLat = weatherDTO.weatherLat;
+						weatherLon = weatherDTO.weatherLon;
+						
+						reWeather(weatherName,weatherLat, weatherLon);
+					});
+				}
+			});
+			
+		});
 	});
 	
-	/* function BHWeather(){
-		var wspd = ""; //풍속
+	function reWeather(weatherName,weatherLat, weatherLon){
+		console.log("weatherLat = "+weatherLat+", weatherLon"+weatherLon);
+		var weatherMain="";
+		var weatherTemp="";
+		var weatherHumidity="";
+		var weatherWspd="";
+		var weatherIcon="";
 		$.ajax({
-			url:"http://apis.skplanetx.com/weather/forecast/3days?version=1&lat=37.190605&lon=128.828102&city=강원&county=정선&village=고한&foretxt=N",
-			dataType: "json",
+			url:"http://api.openweathermap.org/data/2.5/weather",
+			jsonp: "callback",
+			dataType: "jsonp",
+			data: {	'lat': weatherLat,
+					'lon' : weatherLon,
+					'APPID' : "0e5f521c3a02fef696fd7cb59646a610"
+			},
 			success: function(data){
-				console.log(data.result);
-				wspd = data.weather.forecast3days.fcst3hour.wind.wspd[4]hour;
+				console.log(data);
+				weatherTemp = (data.main.temp-273.15).toFixed(2);
+				weatherHumidity = data.main.humidity;
+				weatherWspd = data.wind.speed;
+				weatherMain = data.weather[0].main;
+				weatherIcon = data.weather[0].icon;
+				$.ajax({
+					url: "/skiproject/slope/reWeather",
+					type: "POST",
+					data: {"weatherTemp":weatherTemp,
+							"weatherHumidity":weatherHumidity,
+							"weatherWspd":weatherWspd,
+							"weatherMain": weatherMain,
+							"weatherIcon" : weatherIcon,
+							"weatherName" : weatherName},
+					dataType:"text",
+					success: function(data){
+						console.log("ok");
+					}
+				
+				});
+				var weatherTxt ="";
+				weatherTxt += "<tr>";
+				weatherTxt += "<th scope='row'>"+weatherName+"</th>";
+				weatherTxt += "<td>"+weatherTemp+"℃</td>";
+				weatherTxt += "<td>"+weatherHumidity+"%</td>";
+				weatherTxt += "<td>"+weatherWspd+"m/s</td>";
+				weatherTxt += "<td>"+weatherMain+"</td>";
+				weatherTxt += "<td><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png' /></td>";
+				weatherTxt += "</tr>";
+				
+				$(".weather.slopeTable tbody").append(weatherTxt);
 			}
 		});
-		$(".slopeTable .wspd").html(wspd);
-	} */
+		
+		/* $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+weatherLat+"&lon="+weatherLon+"&appid=0e5f521c3a02fef696fd7cb59646a610", function(data){
+			weatherTemp = data["main"]["temp"];
+			weatherHumidity = data["main"]["humidity"];
+			weatherWspd = data["wind"]["speed"];
+			weatherMain = data["weather"]["main"];
+			weatherIcon = data["weather"]["icon"]; 
+		}); */
+		
+		/* $.ajax({
+			url : "http://api.openweathermap.org/data/2.5/weather?lat=37.207500&lon=128.825359&APPID=ba4d76378a980b7d67a15cf76735b65c",
+			method: "GET",			
+			success : function(data){
+				var wspd = data;
+				$(".wspd").html(wspd);
+				JsonParser parser = new JsonParser();
+				JSONObject jsonObject = (JSONObject) parser.parse(data);
+				$(".wspd").html(jsonObject.get("speed"));
+				
+				$(".wspd").html(data.wind.speed);
+			}
+		});  */
+	}
 </script>
 
 <div id="slopeWrap">
@@ -725,7 +813,8 @@
 	<h4 class="contentTitle">국제스키연맹 공인 슬로프</h4>
 	<hr class="ski" style="margin: 0 0 17px;">
 	<p class="content">풍속은 08시 마운틴 곤돌라 기준</p>
-	<table class="slopeTable">
+	<input type="button" id="reWeather" value="갱신">
+	<table class="slopeTable weather">
 	    <caption>슬로프 기상 현황</caption>
 	    <thead>
 	    	<tr>
@@ -733,8 +822,8 @@
 			   <th scope="col">온도</th>
 			   <th scope="col">습도</th>
 			   <th scope="col">풍속</th>
-			   <th scope="col">강우량</th>
-			   <th scope="col">적설량</th>
+			   <th scope="col">상태</th>
+			   <th scope="col">아이콘</th>
 	    	</tr>
 	    </thead>
 		<tbody>
@@ -742,7 +831,7 @@
 				<th scope="row">밸리 허브</th>
 				<td>-3.1℃</td>
 				<td>75%</td>
-				<td class="wspd">2~3m/s</td>
+				<td class="wspd"></td>
 				<td>mm</td>
 				<td>mm</td>
 			</tr>

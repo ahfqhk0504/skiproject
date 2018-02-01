@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="slopeSQL">
+	<select id="getWeatherInfo" resultType="weather">
+		select weatherName, weatherLat, weatherLon from weatherTable
+	</select>
+	
+	<update id="reWeatherInfo" parameterType="weather">
+		update weatherTable set weatherTemp = #{weatherTemp},
+								weatherHumidity = #{weatherHumidity},
+								weatherWspd = #{weatherWspd},
+								weatherMain = #{weatherMain},
+								weatherIcon = #{weatherIcon}
+		where weatherName = #{weatherName}
+	</update>
+</mapper>
