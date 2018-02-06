@@ -14,5 +14,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								weatherMain = #{weatherMain},
 								weatherIcon = #{weatherIcon}
 		where weatherName = #{weatherName}
-	</update>
+	</update> 
+	
+	<select id="getSlopeList" resultType="slope">
+		select * from slopeTable	
+	</select>
+	
+	<select id="getMap" parameterType="String" resultType="String">
+		select slopeMap from slopeTable where slopeName=#{slopeName}
+	</select>
 </mapper>

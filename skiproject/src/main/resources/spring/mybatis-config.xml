@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias type="slope.bean.WeatherDTO" alias="weather"/>
+		<typeAlias type="slope.bean.SlopeDTO" alias="slope"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="slope/dao/slopeMapper.xml"/>

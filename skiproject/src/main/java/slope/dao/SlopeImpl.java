@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import slope.bean.SlopeDTO;
 import slope.bean.WeatherDTO;
 
 @Transactional
@@ -20,5 +21,11 @@ public class SlopeImpl implements SlopeDAO {
 	}
 	public void reWeatherInfo(WeatherDTO weatherDTO) {
 		sqlSession.update("slopeSQL.reWeatherInfo",weatherDTO);
+	}
+	public List<SlopeDTO> getSlopeList() {
+		return sqlSession.selectList("slopeSQL.getSlopeList");
+	}
+	public String getMap(String slopeName) {
+		return sqlSession.selectOne("slopeSQL.getMap", slopeName);
 	}
 }
