@@ -25,7 +25,7 @@ public class SlopeImpl implements SlopeDAO {
 	public List<SlopeDTO> getSlopeList() {
 		return sqlSession.selectList("slopeSQL.getSlopeList");
 	}
-	public String getMap(String slopeName) {
-		return sqlSession.selectOne("slopeSQL.getMap", slopeName);
+	public SlopeDTO getSlopeInfo(String slopeName) {
+		return sqlSession.selectOne("slopeSQL.getSlopeInfo", slopeName);
 	}
 }

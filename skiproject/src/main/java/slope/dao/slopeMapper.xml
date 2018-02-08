@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from slopeTable	
 	</select>
 	
-	<select id="getMap" parameterType="String" resultType="String">
-		select slopeMap from slopeTable where slopeName=#{slopeName}
+	<select id="getSlopeInfo" parameterType="String" resultType="slope">
+		select * from slopeTable where slopeName = #{slopeName}
 	</select>
 </mapper>

@@ -33,7 +33,7 @@ public class SlopeController {
 	}
 	
 	@RequestMapping(value="/reWeather", method=RequestMethod.POST)
-	public @ResponseBody String reWeather(@ModelAttribute WeatherDTO weatherDTO,Model model) {
+	public @ResponseBody String reWeather(@ModelAttribute WeatherDTO weatherDTO) {
 		slopeDAO.reWeatherInfo(weatherDTO);
 		return "ok";
 	}
@@ -47,9 +47,12 @@ public class SlopeController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/getMap", method=RequestMethod.POST)
-	public @ResponseBody String getMap(@RequestParam("slopeName") String slopeName, Model model) {
-		String slopeMap = slopeDAO.getMap(slopeName);
-		return slopeMap;
+	@RequestMapping(value="/getSlopeInfo", method=RequestMethod.POST)
+	public ModelAndView getSlopeInfo(@RequestParam("slopeName") String slopeName, Model model) {
+		ModelAndView mav = new ModelAndView();
+		SlopeDTO slopeDTO = slopeDAO.getSlopeInfo(slopeName);
+		mav.addObject("slopeDTO", slopeDTO);
+		mav.setViewName("jsonView");
+		return mav;
 	}
 }

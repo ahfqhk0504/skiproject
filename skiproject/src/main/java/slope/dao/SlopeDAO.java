@@ -10,6 +10,6 @@ public interface SlopeDAO {
 	List<WeatherDTO> getWeatherInfo();
 	void reWeatherInfo(WeatherDTO weatherDTO);
 	List<SlopeDTO> getSlopeList();
-	String getMap(String slopeName);
+	SlopeDTO getSlopeInfo(String slopeName);
 
 }

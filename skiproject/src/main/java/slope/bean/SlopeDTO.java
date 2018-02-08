@@ -18,5 +18,7 @@ public class SlopeDTO {
 	public String slopeMorningOpen;
 	public String slopeAfternoonOpen;
 	public String slopeNightOpen;
+	public String slopeML;
+	public String slopeMT;
 	public String slopeMap;
 }

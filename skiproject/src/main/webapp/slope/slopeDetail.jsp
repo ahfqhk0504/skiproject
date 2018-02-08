@@ -170,6 +170,47 @@
 	width:750px;
 	height: 550px;
 }
+#slopeWrap .map .slopeSubInfo{
+	position:absolute;
+	width: 300px;
+    height: 180px;
+    background-color: rgba( 0, 0, 0, 0.7 );
+    display: none;
+}
+#slopeWrap .map .slopeSubInfo span{
+	margin-left: 25px;
+}
+#slopeWrap .map .slopeSubInfo .slopeSubInfoTable{
+	margin: 10px auto;
+	width: 250px;
+}
+#slopeWrap .map .slopeSubInfo thead th{
+	background: #0C4B70; 
+	text-align: center;
+	vertical-align: middle;
+	border-left: 1px solid #333;
+	padding: 0 7px;
+	height: 25px;
+	color:#fff;
+}
+#slopeWrap .map .slopeSubInfo tbody td{
+	text-align: center;
+	vertical-align: middle;
+	height: 25px;
+	background: #fff;
+	color: #333;
+	font-weight: 600;
+}
+
+#slopeWrap .map .slopeSubInfo .slopeTitle{
+	color: #fff;
+	font-weight: bold;
+}
+#slopeWrap .map .slopeSubInfo .slopeName{
+	color: #c0c0c0;
+	 
+}
+
 #slopeWrap #reWeather{
 	float: right;
 }
@@ -200,20 +241,35 @@
 	$(document).ready(function(){
 		
 		$(".mapButtonWrap .menu .button").mouseenter(function(){
+			var slopeTitleKor = $(this).prevAll(".title_kor").text();
 			var slopeName = $(this).attr("class").split(" ");
 			$.ajax({
-				url: "/skiproject/slope/getMap",
+				url: "/skiproject/slope/getSlopeInfo",
 				type: "POST",
 				data: {'slopeName': slopeName[0]},
-				dataType: "text",
+				dataType: "json",
 				success: function(data){
-					$("#slopeWrap .map img").attr("src",data);
+					
+					$("#slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
+					
+					$("#slopeWrap .map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML).css("margin-top",data.slopeDTO.slopeMT);
+					
+					$(".slopeSubInfo .slopeTitle").text(slopeTitleKor);
+					$(".slopeSubInfo .slopeName").text(data.slopeDTO.slopeName);
+					$(".slopeSubInfo .slopeSubInfoTable td.slopeDifficulty").text(data.slopeDTO.slopeDifficulty);
+					$(".slopeSubInfo .slopeSubInfoTable td.slopeLength").text(comma(data.slopeDTO.slopeLength));
+					$(".slopeSubInfo .slopeSubInfoTable td.slopeAltitude").text(data.slopeDTO.slopeAltitude);
+					$(".slopeSubInfo .slopeSubInfoTable td.slopeWidth").text(data.slopeDTO.slopeWidth);
+					$(".slopeSubInfo .slopeSubInfoTable td.slopeSlopeAverage").text(data.slopeDTO.slopeSlopeAverage);
+					$(".slopeSubInfo .slopeSubInfoTable td.slopeSlopeMax").text(data.slopeDTO.slopeSlopeMax);
+					 
 				}
 			}); 
 		});
 		
 		$(".mapButtonWrap .menu .button").mouseleave(function(){
 			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg");
+			$("#slopeWrap .map .slopeSubInfo").css("display","none");
 		});
 		
 		//날씨 갱신 버튼 클릭시
@@ -419,13 +475,50 @@
 	지도 위 빨간색 번호 버튼 또는 웹캠 안내 버튼을 클릭하시면, 슬로프 실시간 현황인 웹캠을 보실 수 있습니다.<br>
 	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
 	<div class="map">
+		<div class="slopeSubInfo">
+			<span class="slopeTitle"></span><br>
+			<span class="slopeName"></span><br>
+			<table class="slopeSubInfoTable">
+				<thead>
+					<tr>
+						<th>난이도</th>
+						<th>표고차 (m)</th>
+						<th>슬로프길이 (m)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="slopeDifficulty"></td>
+						<td class="slopeAltitude"></td>
+						<td class="slopeLength"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table class="slopeSubInfoTable">
+				<thead>
+					<tr>
+						<th>평균폭 (m)</th>
+						<th>평균경사 (')</th>
+						<th>최대경사 (')</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="slopeWidth"></td>
+						<td class="slopeSlopeAverage"></td>
+						<td class="slopeSlopeMax"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 		<div class="mapWrap">
 			<img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
 		</div>
 		<div class="mapButtonWrap">
 			 <p class="menu first">
 			 	<span class="title_eng">&nbsp;ZEUS<br></span>
-			 	<span class="title_kor">&nbsp;제우스</span><br><br>
+			 	<span class="title_kor">제우스</span><br><br>
 			 	<span class="Zeus1 button">1</span>
 			 	<span class="Zeus2 button">2</span>
 			 	<span class="Zeus3 button">3</span>
@@ -433,21 +526,21 @@
 			 </p>
 			 <p class="menu">
 			 	<span class="title_eng">&nbsp;VICTORIA<br></span>
-			 	<span class="title_kor">&nbsp;빅토리아</span><br><br>
+			 	<span class="title_kor">빅토리아</span><br><br>
 			 	<span class="Victoria1 button">1</span>
 			 	<span class="Victoria2 button">2</span>
 			 	<span class="Victoria3 button">3</span>
 			 </p>
 			 <p class="menu">
 			 	<span class="title_eng">&nbsp;HERA<br></span>
-			 	<span class="title_kor">&nbsp;헤라</span><br><br>
+			 	<span class="title_kor">헤라</span><br><br>
 			 	<span class="Hera1 button">1</span>
 			 	<span class="Hera2 button">2</span>
 			 	<span class="Hera3 button">3</span>
 			 </p>
 			 <p class="menu">
 			 	<span class="title_eng">&nbsp;APOLLO<br></span>
-			 	<span class="title_kor">&nbsp;아폴로</span><br><br>
+			 	<span class="title_kor">아폴로</span><br><br>
 			 	<span class="Apollo1 button">1</span>
 			 	<span class="Apollo2 button">2</span>
 			 	<span class="Apollo3 button">3</span>
@@ -457,7 +550,7 @@
 			 </p>
 			 <p class="menu">
 			 	<span class="title_eng">&nbsp;ATHENA<br></span>
-			 	<span class="title_kor">&nbsp;아테나</span><br><br>
+			 	<span class="title_kor">아테나</span><br><br>
 			 	<span class="Athena1 button">1</span>
 			 	<span class="Athena2 button">2</span>
 			 	<span class="Athena3 button">3</span>
@@ -465,7 +558,7 @@
 			 </p>
 			 <p class="menu">
 			 	<span class="title_eng">&nbsp;SLED<br></span>
-			 	<span class="title_kor">&nbsp;눈썰매장</span><br><br>
+			 	<span class="title_kor">눈썰매장</span><br><br>
 			 	<span class="Sled1 button">1</span>
 			 </p>
 			 <p class="menu">
@@ -509,7 +602,7 @@
 	<hr class="ski" style="margin: 0 0 17px;">
 	<p class="content">풍속은 08시 마운틴 곤돌라 기준</p>
 	<input type="button" id="reWeather" value="갱신">
-	<table class="slopeTable weather">
+	<table class="slopeTable weather"> 
 	    <caption>슬로프 기상 현황</caption>
 	    <thead>
 	    	<tr>
