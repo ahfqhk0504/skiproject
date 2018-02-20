@@ -125,11 +125,17 @@
 #slopeWrap .map{
 	position: relative;
 	width:750px;
-	height: 550px;
+	height: 650px;
 	border: 1px solid #333;
 	margin: 30px auto 0;
 }
-
+#slopeWrap .map .mapButtonWrap{
+	border: 1px solid #333;
+	float: left;
+	width: 750px;
+	height: 100px;
+	z-index: 9999; 
+}
 #slopeWrap{
 	position: relative;
     margin-left: 270px;
@@ -161,356 +167,396 @@
 	<p class="content">슬로프 운영 현황은 기상 상태 및 영업정책에 따라 변동될 수 있습니다. 밸리베이스, 밸리허브, 마운틴 탑 아이콘을 클릭하시면 기상정보가 안내됩니다.<br>
 	지도 위 빨간색 번호 버튼 또는 웹캠 안내 버튼을 클릭하시면, 슬로프 실시간 현황인 웹캠을 보실 수 있습니다.<br>
 	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	<div class="map">
+	<div class="map"><img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
+		<div class="mapButtonWrap">
+			 
+		</div>
 	</div>
 	<h4 class="contentTitle">슬로프 제원/현황</h4>
 	<hr class="ski" style="margin: 0 0 17px;">
 	<p class="content">운영시간: 오전 08:30~13:00 / 오후 12:00~16:00 / 야간 18:00~22:00<br>
 	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	
 	<table class="slopeTable">
-		    <caption>슬로프제원/현황</caption>
-		    <thead>
-		    	<tr>
-		    	   <th scope="col" colspan="2" rowspan="2">슬로프명</th>
-				   <th scope="col" rowspan="2">난이도</th>
-				   <th scope="col" rowspan="2">연장(m)</th>
-				   <th scope="col" rowspan="2">표고차(m)</th>
-				   <th scope="col" rowspan="2">평균폭(m)</th>
-				   <th scope="col" colspan="2">경사각</th>
-				   <th scope="col" colspan="4">오픈현황</th>
-		    	</tr>
-				<tr>
-					<th scope="col" class="tableTitle">평균</th>
-					<th scope="col" class="tableTitle">최대</th>
-					<th scope="col" class="tableTitle">오전</th>
-					<th scope="col" class="tableTitle">오후</th>
-					<th scope="col" class="tableTitle">야간</th>
-				</tr>
-		    </thead>
-			<tbody>
-				<tr>
-					<th scope="row" rowspan="4">제우스 <br>(ZEUS)</th>
-					<th scope="row" class="tableTitle">Z1</th>
-					<td>초급</td>
-					<td>2,328</td>
-					<td>370.00</td>
-					<td>41.3</td>
-					<td>9.48</td>
-					<td>13.6</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">Z2</th>
-					<td>초급</td>
-					<td>2,198</td>
-					<td>95.61</td>
-					<td>19.9</td>
-					<td>7.49</td>
-					<td>13.5</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">Z3</th>
-					<td>초급</td>
-					<td>1,835</td>
-					<td>273.00</td>
-					<td>71.2</td>
-					<td>8.73</td>
-					<td>13.8</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">Z3-1</th>
-					<td>초급</td>
-					<td>1,023</td>
-					<td>121.00</td>
-					<td>71.2</td>
-					<td>6.8</td>
-					<td>10.8</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr class="bt">
-					<th scope="row" rowspan="3">빅토리아 <br>(VICTORIA)</th>
-					<th scope="row" class="tableTitle">V1</th>
-					<td>상급</td>
-					<td>1,439</td>
-					<td>379.00</td>
-					<td>49.1</td>
-					<td>15.58</td>
-					<td>27.7</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">V2</th>
-					<td>상급</td>
-					<td>1,382</td>
-					<td>269.00</td>
-					<td>36.1</td>
-					<td>18.72</td>
-					<td>25.8</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">V3</th>
-					<td>최상급</td>
-					<td>1,311</td>
-					<td>376.00</td>
-					<td>34.1</td>
-					<td>17.01</td>
-					<td>35.4</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr class="bt">
-					<th scope="row" rowspan="3">헤라<br>(HERA)</th>
-					<th scope="row" class="tableTitle">H1</th>
-					<td>중급</td>
-					<td>1,508</td>
-					<td>197.03</td>
-					<td>39.4</td>
-					<td>14.86</td>
-					<td>21.8</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">H2</th>
-					<td>중상급</td>
-					<td>1,301</td>
-					<td>294.73</td>
-					<td>38.8</td>
-					<td>17.40</td>
-					<td>24.2</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">H3</th>
-					<td>상급</td>
-					<td>1,278</td>
-					<td>262.12</td>
-					<td>36.6</td>
-					<td>19.75</td>
-					<td>25.8</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr class="bt">
-					<th scope="row" rowspan="6">아폴로 <br>(APOLLO)</th>
-					<th scope="row" class="tableTitle">AP1</th>
-					<td>상급</td>
-					<td>1,506</td>
-					<td>349.48</td>
-					<td>35.0</td>
-					<td>11.35</td>
-					<td>25.4</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AP2</th>
-					<td>상급</td>
-					<td>863</td>
-					<td>161.00</td>
-					<td>33.1</td>
-					<td>20.32</td>
-					<td>24.2</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AP3</th>
-					<td>상급</td>
-					<td>754</td>
-					<td>121.39</td>
-					<td>33.7</td>
-					<td>15.85</td>
-					<td>26.3</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AP4</th>
-					<td>상급</td>
-					<td>1,569</td>
-					<td>409.63</td>
-					<td>54.7</td>
-					<td>15.45</td>
-					<td>24.2</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AP5</th>
-					<td>최상급</td>
-					<td>1,239</td>
-					<td>266.33</td>
-					<td>40.8</td>
-					<td>22.13</td>
-					<td>33.0</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AP6</th>
-					<td>상급</td>
-					<td>1,543</td>
-					<td>193.37</td>
-					<td>44.3</td>
-					<td>18.03</td>
-					<td>24.3</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr class="bt">
-					<th scope="row" rowspan="4">아테나<br>(ATHENA)</th>
-					<th scope="row" class="tableTitle">AT1</th>
-					<td>초급</td>
-					<td>1,183</td>
-					<td>102.00</td>
-					<td>52.3</td>
-					<td>6.35</td>
-					<td>11.19</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AT2</th>
-					<td>중급</td>
-					<td>1,666</td>
-					<td>312.00</td>
-					<td>42.0</td>
-					<td>10.7</td>
-					<td>15.2</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AT3</th>
-					<td>초급</td>
-					<td>1,862</td>
-					<td>228.30</td>
-					<td>19.2</td>
-					<td>7.28</td>
-					<td>11.3</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">AT3-1</th>
-					<td>초급</td>
-					<td>1,162</td>
-					<td>138.30</td>
-					<td>19.2</td>
-					<td>6.8</td>
-					<td>10.4</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-				</tr>
-				<tr class="bt">
-					<th scope="row" rowspan="5">터레인 <br>(TERRAIN)</th>
-					<th scope="row" class="tableTitle">초</th>
-					<td>초급</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">중</th>
-					<td>중급</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">상</th>
-					<td>상급</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">하프파이프</th>
-					<!--<td>초급</td>-->
-                    <td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr>
-					<th scope="row" class="tableTitle">모글</th>
-					<td>상급</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-				<tr class="bt">
-					<th scope="row" colspan="2">눈썰매장</th>
-					<td>초급</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td><span class="open">open</span></td>
-					<td><span class="open">open</span></td>
-					<td><span class="close">close</span></td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
+		<caption>슬로프제원/현황</caption>
+		<thead>
+	    	<tr>
+	    	   <th scope="col" colspan="2" rowspan="2">슬로프명</th>
+			   <th scope="col" rowspan="2">난이도</th>
+			   <th scope="col" rowspan="2">연장(m)</th>
+			   <th scope="col" rowspan="2">표고차(m)</th>
+			   <th scope="col" rowspan="2">평균폭(m)</th>
+			   <th scope="col" colspan="2">경사각</th>
+			   <th scope="col" colspan="4">오픈현황</th>
+	    	</tr>
+			<tr>
+				<th scope="col" class="tableTitle">평균</th>
+				<th scope="col" class="tableTitle">최대</th>
+				<th scope="col" class="tableTitle">오전</th>
+				<th scope="col" class="tableTitle">오후</th>
+				<th scope="col" class="tableTitle">야간</th>
+			</tr>
+	    </thead>
+		<tbody>
+			<tr>
+				<th scope="row" rowspan="4">제우스 <br>(ZEUS)</th>
+				<th scope="row" class="tableTitle">Z1</th>
+				<td>초급</td>
+				<td>2,328</td>
+				<td>370.00</td>
+				<td>41.3</td>
+				<td>9.48</td>
+				<td>13.6</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">Z2</th>
+				<td>초급</td>
+				<td>2,198</td>
+				<td>95.61</td>
+				<td>19.9</td>
+				<td>7.49</td>
+				<td>13.5</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">Z3</th>
+				<td>초급</td>
+				<td>1,835</td>
+				<td>273.00</td>
+				<td>71.2</td>
+				<td>8.73</td>
+				<td>13.8</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">Z3-1</th>
+				<td>초급</td>
+				<td>1,023</td>
+				<td>121.00</td>
+				<td>71.2</td>
+				<td>6.8</td>
+				<td>10.8</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr class="bt">
+				<th scope="row" rowspan="3">빅토리아 <br>(VICTORIA)</th>
+				<th scope="row" class="tableTitle">V1</th>
+				<td>상급</td>
+				<td>1,439</td>
+				<td>379.00</td>
+				<td>49.1</td>
+				<td>15.58</td>
+				<td>27.7</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">V2</th>
+				<td>상급</td>
+				<td>1,382</td>
+				<td>269.00</td>
+				<td>36.1</td>
+				<td>18.72</td>
+				<td>25.8</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">V3</th>
+				<td>최상급</td>
+				<td>1,311</td>
+				<td>376.00</td>
+				<td>34.1</td>
+				<td>17.01</td>
+				<td>35.4</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr class="bt">
+				<th scope="row" rowspan="3">헤라<br>(HERA)</th>
+				<th scope="row" class="tableTitle">H1</th>
+				<td>중급</td>
+				<td>1,508</td>
+				<td>197.03</td>
+				<td>39.4</td>
+				<td>14.86</td>
+				<td>21.8</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">H2</th>
+				<td>중상급</td>
+				<td>1,301</td>
+				<td>294.73</td>
+				<td>38.8</td>
+				<td>17.40</td>
+				<td>24.2</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">H3</th>
+				<td>상급</td>
+				<td>1,278</td>
+				<td>262.12</td>
+				<td>36.6</td>
+				<td>19.75</td>
+				<td>25.8</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr class="bt">
+				<th scope="row" rowspan="6">아폴로 <br>(APOLLO)</th>
+				<th scope="row" class="tableTitle">AP1</th>
+				<td>상급</td>
+				<td>1,506</td>
+				<td>349.48</td>
+				<td>35.0</td>
+				<td>11.35</td>
+				<td>25.4</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AP2</th>
+				<td>상급</td>
+				<td>863</td>
+				<td>161.00</td>
+				<td>33.1</td>
+				<td>20.32</td>
+				<td>24.2</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AP3</th>
+				<td>상급</td>
+				<td>754</td>
+				<td>121.39</td>
+				<td>33.7</td>
+				<td>15.85</td>
+				<td>26.3</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AP4</th>
+				<td>상급</td>
+				<td>1,569</td>
+				<td>409.63</td>
+				<td>54.7</td>
+				<td>15.45</td>
+				<td>24.2</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AP5</th>
+				<td>최상급</td>
+				<td>1,239</td>
+				<td>266.33</td>
+				<td>40.8</td>
+				<td>22.13</td>
+				<td>33.0</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AP6</th>
+				<td>상급</td>
+				<td>1,543</td>
+				<td>193.37</td>
+				<td>44.3</td>
+				<td>18.03</td>
+				<td>24.3</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr class="bt">
+				<th scope="row" rowspan="4">아테나<br>(ATHENA)</th>
+				<th scope="row" class="tableTitle">AT1</th>
+				<td>초급</td>
+				<td>1,183</td>
+				<td>102.00</td>
+				<td>52.3</td>
+				<td>6.35</td>
+				<td>11.19</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AT2</th>
+				<td>중급</td>
+				<td>1,666</td>
+				<td>312.00</td>
+				<td>42.0</td>
+				<td>10.7</td>
+				<td>15.2</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AT3</th>
+				<td>초급</td>
+				<td>1,862</td>
+				<td>228.30</td>
+				<td>19.2</td>
+				<td>7.28</td>
+				<td>11.3</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">AT3-1</th>
+				<td>초급</td>
+				<td>1,162</td>
+				<td>138.30</td>
+				<td>19.2</td>
+				<td>6.8</td>
+				<td>10.4</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+			</tr>
+			<tr class="bt">
+				<th scope="row" rowspan="5">터레인 <br>(TERRAIN)</th>
+				<th scope="row" class="tableTitle">초</th>
+				<td>초급</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">중</th>
+				<td>중급</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">상</th>
+				<td>상급</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">하프파이프</th>
+                <td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr>
+				<th scope="row" class="tableTitle">모글</th>
+				<td>상급</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+			<tr class="bt">
+				<th scope="row" colspan="2">눈썰매장</th>
+				<td>초급</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class="open">open</span></td>
+				<td><span class="open">open</span></td>
+				<td><span class="close">close</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 class="contentTitle">국제스키연맹 공인 슬로프</h4>
+	<hr class="ski" style="margin: 0 0 17px;">
+	<p class="content">풍속은 08시 마운틴 곤돌라 기준</p>
+	<table class="slopeTable">
+	    <caption>슬로프 기상 현황</caption>
+	    <thead>
+	    	<tr>
+	    	   <th scope="col">구분</th>
+			   <th scope="col">온도</th>
+			   <th scope="col">습도</th>
+			   <th scope="col">풍속</th>
+			   <th scope="col">강우량</th>
+			   <th scope="col">적설량</th>
+	    	</tr>
+	    </thead>
+		<tbody>
+			<tr>
+				<th scope="row">마운틴베이스</th>
+				<td>-3.1℃</td>
+				<td>75%</td>
+				<td>2~3m/s</td>
+				<td>mm</td>
+				<td>mm</td>
+			</tr>
+			<tr>
+				<th scope="row">마운틴 허브</th>
+				<td>-3.7℃</td>
+				<td>83%</td>
+				<td>4~6m/s</td>
+				<td>mm</td>
+				<td>mm</td>
+			</tr>
+			<tr>
+				<th scope="row">마운틴 탑</th>
+				<td>-6.2℃</td>
+				<td>82%</td>
+				<td>5~7m/s</td>
+				<td>mm</td>
+				<td>mm</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

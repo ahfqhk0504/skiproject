@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-호호dd
+${Notice}
 </body>
 </html>
