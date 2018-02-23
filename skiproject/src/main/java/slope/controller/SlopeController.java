@@ -21,6 +21,13 @@ import slope.dao.SlopeDAO;
 public class SlopeController {
 	@Autowired
 	SlopeDAO slopeDAO;
+	@RequestMapping(value="/page", method=RequestMethod.GET)
+	public String page(Model model) {
+		model.addAttribute("display", "/slope/slopeDetail.jsp");
+		return "/main/indexView";
+	}
+	
+	
 	
 	@RequestMapping(value="/weatherInfo", method=RequestMethod.GET)
 	public ModelAndView weatherInfo() {

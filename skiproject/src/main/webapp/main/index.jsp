@@ -1,43 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Creative - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="../bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="../bootstrap/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../bootstrap/css/creative.min.css" rel="stylesheet">
-<title>Insert title here</title>
-</head>
-<body id="page-top">
-
-    Navigation
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+     
+ 	  <body id="page-top">  
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">WESKI</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link" href="/skiproject/slope/page">SKI/BOARD</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
@@ -52,8 +26,8 @@
         </div>
       </div>
     </nav>
-
-    <header class="masthead text-center text-white d-flex">
+	 
+ <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
@@ -130,8 +104,8 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+            <a class="portfolio-box" href="/skiproject/img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="/skiproject/img/portfolio/thumbnails/1.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -145,8 +119,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+            <a class="portfolio-box" href="/skiproject/img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="/skiproject/img/portfolio/thumbnails/2.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -160,8 +134,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+            <a class="portfolio-box" href="/skiproject/img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="/skiproject/img/portfolio/thumbnails/3.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -175,8 +149,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+            <a class="portfolio-box" href="/skiproject/img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="/skiproject/img/portfolio/thumbnails/4.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -190,8 +164,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+            <a class="portfolio-box" href="/skiproject/img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="/skiproject/img/portfolio/thumbnails/5.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -205,8 +179,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+            <a class="portfolio-box" href="/skiproject/img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="/skiproject/img/portfolio/thumbnails/6.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -253,14 +227,7 @@
         </div>
       </div>
     </section>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="../bootstrap/vendor/jquery/jquery.min.js"></script>
-    <script src="../bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="../bootstrap/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="../bootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="../bootstrap/js/creative.min.js"></script>
+    
+</body>    
 
-  </body>
-
-</html>
+   
