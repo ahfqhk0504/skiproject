@@ -218,7 +218,7 @@
 				dataType: "json",
 				success: function(data){
 					console.log(data.slopeDTO.slopeML);
-					$("#slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
+					$(".slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
 					
 					$(".map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML+"px").css("margin-top",data.slopeDTO.slopeMT+"px");
 					$(".slopeSubInfo .slopeTitle").text(slopeTitleKor);
@@ -235,8 +235,8 @@
 		});
 		
 		$(".mapButtonWrap .menu .button").mouseleave(function(){
-			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg");
-			$("#slopeWrap .map .slopeSubInfo").css("display","none");
+			$(".slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg");
+			$(".slopeWrap .map .slopeSubInfo").css("display","none"); 
 			//$(".map .slopeSubInfo").css("margin-left","9999px").css("margin-top","9999px");
 		});
 		
@@ -244,7 +244,7 @@
 		$("#reWeather").click(function(){
 			
 			var weatherName="";
-			var weatherLat="";
+			var weatherLat=""; 
 			var weatherLon="";
 			$.ajax({
 				url : "/skiproject/slope/weatherInfo",
