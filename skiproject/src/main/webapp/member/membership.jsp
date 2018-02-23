@@ -5,7 +5,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
 <script >
 	$(document).ready(function(){ 
-	
+		var code;
 		$(".clickEmailPw").click(function(){
 			$("#tableNum").val(0);
 			$(".nameGenderBirth").addClass("hide");
@@ -77,22 +77,24 @@
 				dataType : "json",
 				success : function(data){
 					$('#hiddenEmail').val(data.emailval);
-					$('#hiddenCode').val(data.code);//히든코드를 인증번호를 넣음
+					//$('#hiddenCode').val(data.code);//히든코드를 인증번호를 넣음
+					code = data.code;
+					console.log(data.code);
 				}//success
 			});//ajax  
 		});
 		$("#emailAuthenticationCodeBtn").click(function(){
 
-			if($("#emailAuthenticationCode").val()==$('#hiddenCode').val()){
-				alert("인증완료");
-			}else{
-				alert("응 아니야");
-			}
+				if($("#emailAuthenticationCode").val()==code){
+					alert("인증완료");
+				}else{
+					alert("응 아니야");
+				}
 		});
 		$(".nextBtn").click(function(){
-			alert($("#tableNum").val());
+			/* alert($("#tableNum").val());
 			alert($(".displayTable0").offset().top);
-			alert($(".displayTable0").height());
+			alert($(".displayTable0").height()); */
 			
 			
 			

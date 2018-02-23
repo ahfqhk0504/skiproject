@@ -27,4 +27,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="emailFindAjax" parameterType="java.util.Map" resultType="String">
 		select memberEmail from skimember where memberName = #{memberName} and memberBirth = #{memberBirth} and MEMBERPONE =  #{memberPhone}
 	</select>
+	
+	<select id="passwordFindEmail" parameterType="java.util.Map" resultType="Int">
+		select count(*) from SKIMEMBER where memberEmail = #{memberEmail} and memberName = #{memberName}
+	</select>
+	
+	<update id="passwordModiOk" parameterType="java.util.Map">
+		update skimember set memberPassword = #{memberPassword} where memberEmail =#{memberEmail}
+	</update>
+	
+	
 </mapper>

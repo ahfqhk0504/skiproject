@@ -35,5 +35,13 @@ public class MemberImpl implements MemberDAO{
 	
 		return sqlSession.selectOne("memberSQL.emailFindAjax",map);
 	}
+
+	public int passwordFindEmail(Map<String, String> map) {
+		return sqlSession.selectOne("memberSQL.passwordFindEmail",map);
+	}
+
+	public void passwordModiOk(Map<String, String> map) {
+		sqlSession.update("memberSQL.passwordModiOk",map);
+	}
 	
 }

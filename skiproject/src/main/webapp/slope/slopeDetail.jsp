@@ -250,10 +250,10 @@
 				dataType: "json",
 				success: function(data){
 					
+					console.log(data.slopeDTO.slopeML);
 					$("#slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
 					
 					$("#slopeWrap .map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML).css("margin-top",data.slopeDTO.slopeMT);
-					
 					$(".slopeSubInfo .slopeTitle").text(slopeTitleKor);
 					$(".slopeSubInfo .slopeName").text(data.slopeDTO.slopeName);
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeDifficulty").text(data.slopeDTO.slopeDifficulty);
@@ -262,7 +262,6 @@
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeWidth").text(data.slopeDTO.slopeWidth);
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeSlopeAverage").text(data.slopeDTO.slopeSlopeAverage);
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeSlopeMax").text(data.slopeDTO.slopeSlopeMax);
-					 
 				}
 			}); 
 		});
