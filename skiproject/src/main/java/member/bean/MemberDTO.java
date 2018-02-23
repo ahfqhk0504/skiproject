@@ -1,8 +1,10 @@
 package member.bean;
 
+import lombok.Data;
+
+@Data
 public class MemberDTO {
-	private String memberEmail1;//이메일 앞
-	private String memberEmail2;//이메일 뒤
+	private String memberEmail;//이메일
 	private String memberPassword; //비밀번호
 	private String memberName; //이름
 	private String memberBirth; //생년월일

@@ -135,7 +135,7 @@
 		<a href="#" class="member_write">무료 회원가입</a>
 	</div>
 	<div class="login_bottom">
-		<a href="#" class="naver_login"><img src="../memberImg/naver.jpg"/>네이버로 시작하기</a>
+		<a href="#" class="naver_login"><img src="https://user-images.githubusercontent.com/35482994/35261613-4edcf492-0054-11e8-8092-51f3e024b31f.png"/>네이버로 시작하기</a>
 	</div>
 </div>
 </body>

@@ -26,8 +26,11 @@
 	<context:component-scan base-package="slope.dao" />
 	
 	<context:annotation-config/>
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">	
+	  <tx:annotation-driven transaction-manager="transactionManager"/>
+	  <!-- member -->
+    <context:component-scan base-package="member.bean" />
+	<context:component-scan base-package="member.dao" />
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
 		<property name="username" value="java"></property>

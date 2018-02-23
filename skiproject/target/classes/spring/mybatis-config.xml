@@ -4,10 +4,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+			<typeAlias type="member.bean.MemberDTO" alias="member"/>
 		<typeAlias type="slope.bean.WeatherDTO" alias="weather"/>
 		<typeAlias type="slope.bean.SlopeDTO" alias="slope"/>
 	</typeAliases>
 	<mappers>
+		<mapper resource="member/dao/memberMapper.xml"/>
 		<mapper resource="slope/dao/slopeMapper.xml"/>
 	</mappers>
 </configuration>

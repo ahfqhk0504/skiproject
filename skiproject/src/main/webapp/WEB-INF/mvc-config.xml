@@ -17,6 +17,7 @@
 	
 	<context:component-scan base-package="slope.controller" />
 	<context:component-scan base-package="main.controller" />
+	<context:component-scan base-package="member.controller" />
 	
 	<mvc:view-controller path="/main2/index" view-name="/main2/index" />
 	
@@ -44,9 +45,8 @@
         <property name="host" value="smtp.gmail.com" />							<!-- smtp 서버 주소 -->
         <property name="port" value="587" />									<!-- port : smtp 서버포트 -->
         <property name="defaultEncoding" value="utf-8"/>						<!-- 인코딩 방식 -->
-        <property name="username" value="onne1011@gmail.com" />					<!-- 사용자 아이디 -->
-        <property name="password" value="fldlald7!" />							<!-- 사용자 비밀번호 -->
-       
+        <property name="username" value="9959989@gmail.com" />					<!-- 사용자 아이디 -->
+        <property name="password" value="joywel1@" />							<!-- 사용자 비밀번호 -->
        <property name="javaMailProperties">
             <props>
                 <prop key="mail.smtp.starttls.enable">true</prop>
@@ -57,8 +57,8 @@
         </property>
        
     </bean>
-   <!--  <bean id="email" class="member.email.Email">
+      <bean id="email" class="member.email.Email">
     </bean>
     <bean id="emailSender" class="member.email.EmailSender">
-    </bean> -->
+    </bean>
 </beans>
