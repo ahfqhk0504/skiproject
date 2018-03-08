@@ -1,0 +1,274 @@
+@charset "UTF-8";
+header.slopehead{
+	background-image: url(../img/slopehead.jpg);
+	background-position: center center;
+	height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+section#mapSection{
+	padding: 5rem 0 !important;
+}
+section#slopeSection{
+	padding: 3rem 0 !important;
+	border-top: 1px solid #333;
+}
+section#weatherSection{
+	padding: 0 !important;
+	border-top: 1px solid #333;
+}
+#mainNav .navbar-brand.slope{
+	color: rgba(216,54,54,.7) !important; 
+}
+#mainNav .navbar-nav>li.nav-item>a.nav-link.slope{
+	color: rgba(3,3,3,.7) !important; 
+}
+h2.title{
+	position: relative;
+    height: 28px;
+    color:#f05f40 !important;
+    font-weight: 600;
+    margin-bottom: 100px;  
+}
+.slopeTitleWrap{
+	background: rgba(3,3,3,0.5);
+	margin: 0 auto;
+}
+.subTitle{
+	font-size: 14px;
+	color: #e0e0e0;
+	margin-left: 30px;
+}
+.slopeWrap .slopeTable{
+	margin-top: 30px;
+	width: 100%;
+}
+.slopeWrap .slopeTable thead th{
+	padding: 8px 5px;
+	color: #fff;
+	border: 1px solid #242a37;
+	background: #353d4e;
+}
+.slopeWrap .slopeTable thead th.tableTitle{
+	background: #505868;
+}
+.slopeWrap .slopeTable tbody th{
+	background: #f8f9fa;
+	padding: 8px 5px 7px;
+	color: #333;
+	border: 1px solid #d9dbdb;
+}
+.slopeWrap .slopeTable tbody th.tableTitle{
+	font-weight: normal;
+	font-size: 12px;
+}
+.slopeWrap .slopeTable tbody td{
+	padding: 8px 5px 7px;
+	color: #707070;
+	text-align: center;
+	border: 1px solid #d9dbdb;
+	font-size: 12px; 
+}
+.slopeWrap .slopeTable tr.bt th,
+.slopeWrap .slopeTable tr.bt td{
+	border-top: 2px solid #333;
+}
+.slopeWrap .slopeTable th{
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center; 
+}
+.slopeWrap .slopeTable td{
+	text-align: center;
+	border: 1px solid #d9dbdb;
+	font-size: 12px; 
+}
+.slopeWrap thead, 
+.slopeWrap tr, 
+.slopeWrap th, 
+.slopeWrap td, 
+.slopeWrap tbody{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: left;
+	font-size: 12px;
+}
+.slopeWrap .mapButtonWrap{
+	background: #0C4B70;
+}
+.slopeWrap .mapButtonWrap p.menu{
+	float: left;
+	border-left: 1px solid #333;
+	margin: 0 2px;
+}
+.slopeWrap .mapButtonWrap p.menu.first{
+	border: 0;
+}
+.slopeWrap .mapButtonWrap p.menu .title_eng{
+	font-weight: bold;
+	color: #fff;
+	font-size: 12px;
+}
+.slopeWrap .mapButtonWrap p.menu .title_kor{
+	color: #637C96;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.slopeWrap .mapButtonWrap p.menu .button{
+	width: 24px;
+    height: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    background: black;
+    color: #fff;
+    text-align: center;
+    display: block;
+    float: left;
+    margin-left: 3px;
+    padding-top: 1px;
+    cursor: pointer;
+}
+.slopeWrap .slopeTable span{
+	display: block;
+	width: 50px;
+	height: 20px;
+	margin: auto;
+}
+.slopeWrap .slopeTable span.open{
+	background: #0C4B70;
+	border: 1px solid #0C4B70;
+	color: #fff;
+	font-weight: 600;
+}
+.slopeWrap .slopeTable span.close{
+	/* color: #fff;
+	background: #c0c0c0;
+	border: 1px solid #c0c0c0;
+	font-weight: 600; */
+	color: #fff;
+    background: #c0c0c0;
+    font-weight: 600;
+    line-height: inherit;
+    font-size: 12px;
+    float: none;
+    opacity: 1;
+    text-shadow: none;
+}
+.slopeWrap table{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	font-size: 12px;
+	text-align: left;
+}
+.slopeWrap table caption{
+	width: 0;
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	overflow: hidden;
+}
+.slopeWrap  hr{
+	margin: 40px 0 35px;
+    width: 100%;
+    border: 0px solid #010101;
+    color: #010101;
+    height: 3px;
+    background: #010101;
+}
+.slopeWrap  hr.ski{
+	margin: 50px 0 30px;
+    height: 1px;
+    background: #d9dbdb;
+}
+.slopeWrap .contentTitle{
+	margin-top: 35px;
+    padding-bottom: 15px;
+    color: #f05f40;
+    font-size: 24px;
+    font-weight: 600;
+}
+.slopeWrap .content{
+	font-size: 13px;
+	text-align: left;
+}
+.slopeWrap .map{
+	position: relative;
+	width:750px;
+	height: 650px;
+	border: 1px solid #333;
+	margin: 30px auto 0;
+}
+.slopeWrap .map .mapWrap{
+	width:750px;
+	height: 550px;
+}
+.slopeWrap .map .slopeSubInfo{
+	position:absolute;
+	width: 300px;
+    height: 180px;
+    background-color: rgba( 0, 0, 0, 0.7 );
+    display: none;
+    /* margin-left: 9999px;
+    margin-top: 9999px; */ 
+}
+.slopeWrap .map .slopeSubInfo span{
+	margin-left: 25px;
+}
+.slopeWrap .map .slopeSubInfo .slopeSubInfoTable{
+	margin: 10px auto;
+	width: 250px;
+	line-height: 1 !important;
+}
+.slopeWrap .map .slopeSubInfo thead th{
+	background: #0C4B70; 
+	text-align: center;
+	vertical-align: middle;
+	border-left: 1px solid #333;
+	padding: 0 7px;
+	height: 25px;
+	color:#fff;
+}
+.slopeWrap .map .slopeSubInfo tbody td{
+	text-align: center;
+	vertical-align: middle;
+	height: 25px;
+	background: #fff;
+	color: #333;
+	font-weight: 600;
+}
+.slopeWrap .map .slopeSubInfo .slopeTitle{
+	color: #fff;
+	font-weight: bold;
+}
+.slopeWrap .map .slopeSubInfo .slopeName{
+	color: #c0c0c0;
+}
+.slopeWrap #reWeather{
+	float: right;
+}
+.slopeWrap .map .mapButtonWrap{
+	border: 1px solid #333;
+	float: left;
+	width: 750px;
+	height: 100px;
+	z-index: 9999; 
+}
+.slopeWrap{
+	position: relative;
+    margin: 0 auto;
+    width: 866px;
+    padding-bottom: 90px;
+}
+.slopeWrap div{
+	display:block;
+}
+.slopeWrap p{ 
+	margin:0;
+	padding:0;
+}

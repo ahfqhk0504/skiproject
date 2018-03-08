@@ -1,240 +1,208 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<style type="text/css">
-#slopeWrap .title{
-	position: relative;
-    height: 28px;
-}
-#slopeWrap .subTitle{
-	font-size: 11px;
-	color: #9a9a9a;
-	margin-left: 30px;
-}
-#slopeWrap .slopeTable{
-	margin-top: 30px;
-	width: 100%;
-}
-#slopeWrap .slopeTable thead th{
-	padding: 8px 5px;
-	color: #fff;
-	border: 1px solid #242a37;
-	background: #353d4e;
-}
-#slopeWrap .slopeTable thead th.tableTitle{
-	background: #505868;
-}
-#slopeWrap .slopeTable tbody th{
-	background: #f8f9fa;
-	padding: 8px 5px 7px;
-	color: #333;
-	border: 1px solid #d9dbdb;
-}
-#slopeWrap .slopeTable tbody th.tableTitle{
-	font-weight: normal;
-	font-size: 12px;
-}
-#slopeWrap .slopeTable tbody td{
-	padding: 8px 5px 7px;
-	color: #707070;
-	text-align: center;
-	border: 1px solid #d9dbdb;
-	font-size: 12px; 
-}
-#slopeWrap .slopeTable tr.bt th,
-#slopeWrap .slopeTable tr.bt td{
-	border-top: 2px solid #333;
-}
-#slopeWrap .slopeTable th{
-	font-size: 13px;
-	font-weight: bold;
-	text-align: center; 
-}
-#slopeWrap .slopeTable td{
-	text-align: center;
-	border: 1px solid #d9dbdb;
-	font-size: 12px; 
-}
-#slopeWrap thead, 
-#slopeWrap tr, 
-#slopeWrap th, 
-#slopeWrap td, 
-#slopeWrap tbody{
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	text-align: left;
-	font-size: 13px;
-}
-#slopeWrap .mapButtonWrap{
-	background: #0C4B70;
-}
-#slopeWrap .mapButtonWrap p.menu{
-	float: left;
-	border-left: 1px solid #333;
-	margin: 0 2px;
-}
-#slopeWrap .mapButtonWrap p.menu.first{
-	border: 0;
-}
-#slopeWrap .mapButtonWrap p.menu .title_eng{
-	font-weight: bold;
-	color: #fff;
-	font-size: 12px;
-}
-#slopeWrap .mapButtonWrap p.menu .title_kor{
-	color: #637C96;
-	font-weight: 700;
-	font-size: 14px;
-}
 
-#slopeWrap .mapButtonWrap p.menu .button{
-	width: 24px;
-    height: 16px;
-    font-size: 10px;
-    font-weight: 700;
-    background: black;
-    color: #fff;
-    text-align: center;
-    display: block;
-    float: left;
-    margin-left: 3px;
-    padding-top: 1px;
-    cursor: pointer;
-}
-#slopeWrap .slopeTable span{
-	display: block;
-	width: 50px;
-	height: 20px;
-	margin: auto;
-}
-#slopeWrap .slopeTable span.open{
-	background: #0C4B70;
-	border: 1px solid #0C4B70;
-	color: #fff;
-	font-weight: 600;
-}
-#slopeWrap .slopeTable span.close{
-	color: #fff;
-	background: #c0c0c0;
-	border: 1px solid #c0c0c0;
-	font-weight: 600;
-}
-#slopeWrap table{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	border-spacing: 0px;
-	border-collapse: collapse;
-	font-size: 12px;
-	text-align: left;
-}
-#slopeWrap table caption{
-	width: 0;
-	font-size: 0;
-	line-height: 0;
-	height: 0;
-	overflow: hidden;
-}
-#slopeWrap  hr{
-	margin: 40px 0 35px;
-    width: 100%;
-    border: 0px solid #010101;
-    color: #010101;
-    height: 3px;
-    background: #010101;
-}
-#slopeWrap  hr.ski{
-	margin: 50px 0 30px;
-    height: 1px;
-    background: #d9dbdb;
-}
-#slopeWrap .contentTitle{
-	margin-top: 35px;
-    padding-bottom: 15px;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
-}
-#slopeWrap .content{
-	font-size: 12px;
-	text-align: left;
-}
-#slopeWrap .map{
-	position: relative;
-	width:750px;
-	height: 650px;
-	border: 1px solid #333;
-	margin: 30px auto 0;
-}
-#slopeWrap .map .mapWrap{
-	width:750px;
-	height: 550px;
-}
-#slopeWrap .map .slopeSubInfo{
-	position:absolute;
-	width: 300px;
-    height: 180px;
-    background-color: rgba( 0, 0, 0, 0.7 );
-    display: none;
-}
-#slopeWrap .map .slopeSubInfo span{
-	margin-left: 25px;
-}
-#slopeWrap .map .slopeSubInfo .slopeSubInfoTable{
-	margin: 10px auto;
-	width: 250px;
-}
-#slopeWrap .map .slopeSubInfo thead th{
-	background: #0C4B70; 
-	text-align: center;
-	vertical-align: middle;
-	border-left: 1px solid #333;
-	padding: 0 7px;
-	height: 25px;
-	color:#fff;
-}
-#slopeWrap .map .slopeSubInfo tbody td{
-	text-align: center;
-	vertical-align: middle;
-	height: 25px;
-	background: #fff;
-	color: #333;
-	font-weight: 600;
-}
+<body id="page-top"> 
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger slope" href="#page-top">WESKI</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link slope" href="/skiproject/slope/page">SKI/BOARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger slope" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger slope" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger slope" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+	<header class="slopehead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+        	<div class="slopeTitleWrap">
+          	
+	            <h2 class="title">슬로프안내<span class="subTitle">질주본능을 자극하는 프리미엄 슬로프</span></h2>
+				<h4 class="contentTitle">국제스키연맹 공인 슬로프</h4>
+				<p class="content">
+				백운산 1,367m로부터 표고차 약 680m까지 천혜의 환경 안에서 슬로프 18면,<br> 
+				총 연장 21km의 프리미엄을 온 몸으로 즐기실 수 있는 환상적인 슬로프입니다.<br>
+				HIGH1 SLOPE MAP을 통해 약 28만평에 달하는 스키장의 프리미엄 슬로프를 미리 체험하세요.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="mapSection">
+		<div class="slopeWrap">
+			<h4 class="contentTitle">슬로프 안내맵</h4>
+			<p class="content">슬로프 운영 현황은 기상 상태 및 영업정책에 따라 변동될 수 있습니다. 밸리베이스, 밸리허브, 마운틴 탑 아이콘을 클릭하시면 기상정보가 안내됩니다.<br>
+			지도 위 빨간색 번호 버튼 또는 웹캠 안내 버튼을 클릭하시면, 슬로프 실시간 현황인 웹캠을 보실 수 있습니다.<br>
+			주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
+			<div class="map">
+				<div class="slopeSubInfo">
+					<span class="slopeTitle"></span><br>
+					<span class="slopeName"></span><br>
+					<table class="slopeSubInfoTable">
+						<thead>
+							<tr>
+								<th>난이도</th>
+								<th>표고차 (m)</th>
+								<th>슬로프길이 (m)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="slopeDifficulty"></td>
+								<td class="slopeAltitude"></td>
+								<td class="slopeLength"></td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<table class="slopeSubInfoTable">
+						<thead>
+							<tr>
+								<th>평균폭 (m)</th>
+								<th>평균경사 (')</th>
+								<th>최대경사 (')</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="slopeWidth"></td>
+								<td class="slopeSlopeAverage"></td>
+								<td class="slopeSlopeMax"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="mapWrap">
+					<img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
+				</div>
+				<div class="mapButtonWrap">
+					 <p class="menu first">
+					 	<span class="title_eng">&nbsp;ZEUS<br></span>
+					 	<span class="title_kor">제우스</span><br><br>
+					 	<span class="Zeus1 button">1</span>
+					 	<span class="Zeus2 button">2</span>
+					 	<span class="Zeus3 button">3</span>
+					 	<span class="Zeus3-1 button">3-1</span>
+					 </p>
+					 <p class="menu">
+					 	<span class="title_eng">&nbsp;VICTORIA<br></span>
+					 	<span class="title_kor">빅토리아</span><br><br>
+					 	<span class="Victoria1 button">1</span>
+					 	<span class="Victoria2 button">2</span>
+					 	<span class="Victoria3 button">3</span>
+					 </p>
+					 <p class="menu">
+					 	<span class="title_eng">&nbsp;HERA<br></span>
+					 	<span class="title_kor">헤라</span><br><br>
+					 	<span class="Hera1 button">1</span>
+					 	<span class="Hera2 button">2</span>
+					 	<span class="Hera3 button">3</span>
+					 </p>
+					 <p class="menu">
+					 	<span class="title_eng">&nbsp;APOLLO<br></span>
+					 	<span class="title_kor">아폴로</span><br><br>
+					 	<span class="Apollo1 button">1</span>
+					 	<span class="Apollo2 button">2</span>
+					 	<span class="Apollo3 button">3</span>
+					 	<span class="Apollo4 button">4</span>
+					 	<span class="Apollo5 button">5</span>
+					 	<span class="Apollo6 button">6</span>
+					 </p>
+					 <p class="menu">
+					 	<span class="title_eng">&nbsp;ATHENA<br></span>
+					 	<span class="title_kor">아테나</span><br><br>
+					 	<span class="Athena1 button">1</span>
+					 	<span class="Athena2 button">2</span>
+					 	<span class="Athena3 button">3</span>
+					 	<span class="Athena3-1 button">3-1</span>
+					 </p>
+					 <p class="menu">
+					 	<span class="title_eng">&nbsp;SLED<br></span>
+					 	<span class="title_kor">눈썰매장</span><br><br>
+					 	<span class="Sled1 button">1</span>
+					 </p>
+					 <p class="menu">
+					 	<span class="title_eng">&nbsp;TERRAIN PARK</span><br><br>
+					 	<span class="TerrainPark1 button">초</span>
+					 	<span class="TerrainPark2 button">중</span>
+					 	<span class="TerrainPark3 button">상</span><br>
+					 	<span class="TerrainPark4 button" style="width:58px;">하프파이프</span>
+					 	<span class="TerrainPark5 button" style="width:27px;">모굴</span>
+					 </p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="slopeSection">
+		<div class="slopeWrap">
+			<h4 class="contentTitle">슬로프 제원/현황</h4>
+			<p class="content">운영시간: 오전 08:30~13:00 / 오후 12:00~16:00 / 야간 18:00~22:00<br>
+			주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
+			<table class="slopeTable slope">
+				<caption>슬로프제원/현황</caption>
+				<thead>
+			    	<tr>
+			    	   <th scope="col" colspan="2" rowspan="2">슬로프명</th>
+					   <th scope="col" rowspan="2">난이도</th>
+					   <th scope="col" rowspan="2">연장(m)</th>
+					   <th scope="col" rowspan="2">표고차(m)</th>
+					   <th scope="col" rowspan="2">평균폭(m)</th>
+					   <th scope="col" colspan="2">경사각</th>
+					   <th scope="col" colspan="4">오픈현황</th>
+			    	</tr>
+					<tr>
+						<th scope="col" class="tableTitle">평균</th>
+						<th scope="col" class="tableTitle">최대</th>
+						<th scope="col" class="tableTitle">오전</th>
+						<th scope="col" class="tableTitle">오후</th>
+						<th scope="col" class="tableTitle">야간</th>
+					</tr>
+			    </thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<section id="weatherSection">	
+		<div class="slopeWrap">
+			<h4 class="contentTitle">국제스키연맹 공인 슬로프</h4>
+			<hr class="ski" style="margin: 0 0 17px;">
+			<p class="content">풍속은 08시 마운틴 곤돌라 기준</p>
+			<input type="button" id="reWeather" value="갱신">
+			<table class="slopeTable weather"> 
+			    <caption>슬로프 기상 현황</caption>
+			    <thead>
+			    	<tr>
+			    	   <th scope="col">구분</th>
+					   <th scope="col">온도</th>
+					   <th scope="col">습도</th>
+					   <th scope="col">풍속</th>
+					   <th scope="col">상태</th>
+					   <th scope="col">아이콘</th>
+			    	</tr>
+			    </thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	
+	</section>
+</body>
 
-#slopeWrap .map .slopeSubInfo .slopeTitle{
-	color: #fff;
-	font-weight: bold;
-}
-#slopeWrap .map .slopeSubInfo .slopeName{
-	color: #c0c0c0;
-	 
-}
-
-#slopeWrap #reWeather{
-	float: right;
-}
-#slopeWrap .map .mapButtonWrap{
-	border: 1px solid #333;
-	float: left;
-	width: 750px;
-	height: 100px;
-	z-index: 9999; 
-}
-#slopeWrap{
-	position: relative;
-    margin-left: 270px;
-    width: 866px;
-    padding-bottom: 90px;
-}
-#slopeWrap div{
-	display:block;
-}
-#slopeWrap p{
-	margin:0;
-	padding:0;
-}
-</style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
 <script type="text/javascript">
@@ -249,11 +217,14 @@
 				data: {'slopeName': slopeName[0]},
 				dataType: "json",
 				success: function(data){
+					console.log(data.slopeDTO.slopeML);
+					$(".slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
 					
 					console.log(data.slopeDTO.slopeML);
 					$("#slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
 					
 					$("#slopeWrap .map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML).css("margin-top",data.slopeDTO.slopeMT);
+					$(".map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML+"px").css("margin-top",data.slopeDTO.slopeMT+"px");
 					$(".slopeSubInfo .slopeTitle").text(slopeTitleKor);
 					$(".slopeSubInfo .slopeName").text(data.slopeDTO.slopeName);
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeDifficulty").text(data.slopeDTO.slopeDifficulty);
@@ -267,15 +238,16 @@
 		});
 		
 		$(".mapButtonWrap .menu .button").mouseleave(function(){
-			$("#slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg");
-			$("#slopeWrap .map .slopeSubInfo").css("display","none");
+			$(".slopeWrap .map img").attr("src","https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg");
+			$(".slopeWrap .map .slopeSubInfo").css("display","none"); 
+			//$(".map .slopeSubInfo").css("margin-left","9999px").css("margin-top","9999px");
 		});
 		
 		//날씨 갱신 버튼 클릭시
 		$("#reWeather").click(function(){
 			
 			var weatherName="";
-			var weatherLat="";
+			var weatherLat=""; 
 			var weatherLon="";
 			$.ajax({
 				url : "/skiproject/slope/weatherInfo",
@@ -461,159 +433,3 @@
 		});  */
 	}
 </script>
-
-<div id="slopeWrap">
-	<h2 class="title">슬로프안내<span class="subTitle">질주본능을 자극하는 프리미엄 슬로프</span></h2>
-	<hr>
-	<h4 class="contentTitle">국제스키연맹 공인 슬로프</h4>
-	<p class="content">백운산 1,367m로부터 표고차 약 680m까지 천혜의 환경 안에서 슬로프 18면, 총 연장 21km의 프리미엄을 온 몸으로 즐기실 수 있는 환상적인 슬로프입니다.
-	HIGH1 SLOPE MAP을 통해 약 28만평에 달하는 스키장의 프리미엄 슬로프를 미리 체험하세요.</p>
-	<h4 class="contentTitle">슬로프 안내맵</h4>
-	<hr class="ski" style="margin: 0 0 17px;">
-	<p class="content">슬로프 운영 현황은 기상 상태 및 영업정책에 따라 변동될 수 있습니다. 밸리베이스, 밸리허브, 마운틴 탑 아이콘을 클릭하시면 기상정보가 안내됩니다.<br>
-	지도 위 빨간색 번호 버튼 또는 웹캠 안내 버튼을 클릭하시면, 슬로프 실시간 현황인 웹캠을 보실 수 있습니다.<br>
-	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	<div class="map">
-		<div class="slopeSubInfo">
-			<span class="slopeTitle"></span><br>
-			<span class="slopeName"></span><br>
-			<table class="slopeSubInfoTable">
-				<thead>
-					<tr>
-						<th>난이도</th>
-						<th>표고차 (m)</th>
-						<th>슬로프길이 (m)</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="slopeDifficulty"></td>
-						<td class="slopeAltitude"></td>
-						<td class="slopeLength"></td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<table class="slopeSubInfoTable">
-				<thead>
-					<tr>
-						<th>평균폭 (m)</th>
-						<th>평균경사 (')</th>
-						<th>최대경사 (')</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="slopeWidth"></td>
-						<td class="slopeSlopeAverage"></td>
-						<td class="slopeSlopeMax"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="mapWrap">
-			<img src="https://user-images.githubusercontent.com/35482955/35262210-067c3098-0057-11e8-86a9-9bee0d1e4bbc.jpg" />
-		</div>
-		<div class="mapButtonWrap">
-			 <p class="menu first">
-			 	<span class="title_eng">&nbsp;ZEUS<br></span>
-			 	<span class="title_kor">제우스</span><br><br>
-			 	<span class="Zeus1 button">1</span>
-			 	<span class="Zeus2 button">2</span>
-			 	<span class="Zeus3 button">3</span>
-			 	<span class="Zeus3-1 button">3-1</span>
-			 </p>
-			 <p class="menu">
-			 	<span class="title_eng">&nbsp;VICTORIA<br></span>
-			 	<span class="title_kor">빅토리아</span><br><br>
-			 	<span class="Victoria1 button">1</span>
-			 	<span class="Victoria2 button">2</span>
-			 	<span class="Victoria3 button">3</span>
-			 </p>
-			 <p class="menu">
-			 	<span class="title_eng">&nbsp;HERA<br></span>
-			 	<span class="title_kor">헤라</span><br><br>
-			 	<span class="Hera1 button">1</span>
-			 	<span class="Hera2 button">2</span>
-			 	<span class="Hera3 button">3</span>
-			 </p>
-			 <p class="menu">
-			 	<span class="title_eng">&nbsp;APOLLO<br></span>
-			 	<span class="title_kor">아폴로</span><br><br>
-			 	<span class="Apollo1 button">1</span>
-			 	<span class="Apollo2 button">2</span>
-			 	<span class="Apollo3 button">3</span>
-			 	<span class="Apollo4 button">4</span>
-			 	<span class="Apollo5 button">5</span>
-			 	<span class="Apollo6 button">6</span>
-			 </p>
-			 <p class="menu">
-			 	<span class="title_eng">&nbsp;ATHENA<br></span>
-			 	<span class="title_kor">아테나</span><br><br>
-			 	<span class="Athena1 button">1</span>
-			 	<span class="Athena2 button">2</span>
-			 	<span class="Athena3 button">3</span>
-			 	<span class="Athena3-1 button">3-1</span>
-			 </p>
-			 <p class="menu">
-			 	<span class="title_eng">&nbsp;SLED<br></span>
-			 	<span class="title_kor">눈썰매장</span><br><br>
-			 	<span class="Sled1 button">1</span>
-			 </p>
-			 <p class="menu">
-			 	<span class="title_eng">&nbsp;TERRAIN PARK</span><br><br>
-			 	<span class="TerrainPark1 button">초</span>
-			 	<span class="TerrainPark2 button">중</span>
-			 	<span class="TerrainPark3 button">상</span><br>
-			 	<span class="TerrainPark4 button" style="width:58px;">하프파이프</span>
-			 	<span class="TerrainPark5 button" style="width:27px;">모굴</span>
-			 </p>
-		</div>
-	</div>
-	<h4 class="contentTitle">슬로프 제원/현황</h4>
-	<hr class="ski" style="margin: 0 0 17px;">
-	<p class="content">운영시간: 오전 08:30~13:00 / 오후 12:00~16:00 / 야간 18:00~22:00<br>
-	주간/야간 영업시 마운틴곤돌라 및 헤라리프트는 슬로프 정비작업으로 조기 탑승마감(15시30분 / 21시30분) 될 수 있습니다.</p>
-	<table class="slopeTable slope">
-		<caption>슬로프제원/현황</caption>
-		<thead>
-	    	<tr>
-	    	   <th scope="col" colspan="2" rowspan="2">슬로프명</th>
-			   <th scope="col" rowspan="2">난이도</th>
-			   <th scope="col" rowspan="2">연장(m)</th>
-			   <th scope="col" rowspan="2">표고차(m)</th>
-			   <th scope="col" rowspan="2">평균폭(m)</th>
-			   <th scope="col" colspan="2">경사각</th>
-			   <th scope="col" colspan="4">오픈현황</th>
-	    	</tr>
-			<tr>
-				<th scope="col" class="tableTitle">평균</th>
-				<th scope="col" class="tableTitle">최대</th>
-				<th scope="col" class="tableTitle">오전</th>
-				<th scope="col" class="tableTitle">오후</th>
-				<th scope="col" class="tableTitle">야간</th>
-			</tr>
-	    </thead>
-		<tbody>
-		</tbody>
-	</table>
-	<h4 class="contentTitle">국제스키연맹 공인 슬로프</h4>
-	<hr class="ski" style="margin: 0 0 17px;">
-	<p class="content">풍속은 08시 마운틴 곤돌라 기준</p>
-	<input type="button" id="reWeather" value="갱신">
-	<table class="slopeTable weather"> 
-	    <caption>슬로프 기상 현황</caption>
-	    <thead>
-	    	<tr>
-	    	   <th scope="col">구분</th>
-			   <th scope="col">온도</th>
-			   <th scope="col">습도</th>
-			   <th scope="col">풍속</th>
-			   <th scope="col">상태</th>
-			   <th scope="col">아이콘</th>
-	    	</tr>
-	    </thead>
-		<tbody>
-		</tbody>
-	</table>
-</div>

@@ -86,6 +86,9 @@
 		$("#emailAuthenticationCodeBtn").click(function(){
 
 				if($("#emailAuthenticationCode").val()==code){
+					$("#memberEmail1").attr("readonly",true);
+					$("#memberEmail2").attr("readonly",true);
+					$("#hiddenEmail").val("ok");
 					alert("인증완료");
 				}else{
 					alert("응 아니야");

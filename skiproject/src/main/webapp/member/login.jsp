@@ -12,9 +12,9 @@
 		$(".memberEmail").val("${memberEmail}");
 		//로그인 버튼
 		$("#loginBtn").click(function(){
-		/* 	document.loginForm.submit(); */
+		 	document.loginForm.submit(); 
 			
-			$.ajax({
+/* 			$.ajax({
 				url : "/skiproject/member/loginOk",
 				type:"POST",
 				data: {"memberEmail":memberEmail},
@@ -25,7 +25,7 @@
 					code = data.code;
 					console.log(data.code);
 				}//success
-			});//ajax  
+			});//ajax   */
 			
 		});
 		

@@ -14,12 +14,14 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <property name="suffix" value=".jsp"/>
 	</bean>
+	
 	<context:component-scan base-package="slope.controller" />
 	<context:component-scan base-package="main.controller" />
 	<context:component-scan base-package="member.controller" />
-	<mvc:view-controller path="/main/index" view-name="/main/index" />
-	<mvc:view-controller path="/main2/index" view-name="/main2/index" />
-	<mvc:resources mapping="/main2/**" location="/main2/" />
+	
+	<mvc:resources mapping="/**" location="/" />
+	<mvc:resources mapping="/slope/**" location="/slope/" />
+	
 	<!-- jsonview -->
 	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
 		<property name="contentType" value="text/html;charset=UTF-8" />
@@ -45,8 +47,11 @@
             <props>
                 <prop key="mail.smtp.starttls.enable">true</prop>
                 <prop key="mail.smtp.auth">true</prop>
+               
+               
             </props>
         </property>
+       
     </bean>
       <bean id="email" class="member.email.Email">
     </bean>
