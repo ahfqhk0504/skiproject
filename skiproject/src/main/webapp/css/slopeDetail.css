@@ -27,7 +27,7 @@ section#weatherSection{
 h2.title{
 	position: relative;
     height: 28px;
-    color:#f05f40 !important;
+    color:#fff !important;
     font-weight: 600;
     margin-bottom: 100px;  
 }
