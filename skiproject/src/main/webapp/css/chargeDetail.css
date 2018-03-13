@@ -1,0 +1,10 @@
+@charset "UTF-8";
+header.chargehead{
+	background-image: url(../img/chargehead.jpg);
+	background-position: center center;
+	height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-size: cover;
+}

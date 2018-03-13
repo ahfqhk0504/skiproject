@@ -15,6 +15,7 @@
 	        <property name="suffix" value=".jsp"/>
 	</bean>
 	
+	<context:component-scan base-package="charge.controller" />
 	<context:component-scan base-package="slope.controller" />
 	<context:component-scan base-package="main.controller" />
 	<context:component-scan base-package="member.controller" />
@@ -51,8 +52,6 @@
             <props>
                 <prop key="mail.smtp.starttls.enable">true</prop>
                 <prop key="mail.smtp.auth">true</prop>
-               
-               
             </props>
         </property>
        

@@ -27,7 +27,7 @@
     <link href="../css/creative.min.css" rel="stylesheet">
    
    	<link rel="stylesheet"  href="../css/slopeDetail.css">
- 
+ 	<link rel="stylesheet" href="../css/chargeDetail.css">
 </head>
   <jsp:include page="${display }" />
    

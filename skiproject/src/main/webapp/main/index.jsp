@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      
- 	  <body id="page-top">  
+<body id="page-top">  
  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">WESKI</a>
@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           	<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">이용요금/스키패스권</a>
+              <a class="nav-link" href="/skiproject/charge/page">이용요금/스키패스권</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/skiproject/slope/page">슬로프안내</a>
@@ -34,7 +34,6 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5" style="color:#666;">WESKI홈페이지에 오신걸 환영합니다.</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
           </div>
         </div>
       </div>
@@ -49,7 +48,6 @@
             							세계적인 규모와 시설을 갖춘 하이원 스키장은 겨울을 한껏 즐기려는 <br>
 										스키어, 보더들에게 짜릿함과 즐거움을 선사해 드릴 것입니다.
 			</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
           </div>
         </div>
       </div>

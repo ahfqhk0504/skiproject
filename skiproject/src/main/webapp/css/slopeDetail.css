@@ -6,6 +6,7 @@ header.slopehead{
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;
+    background-size: cover;
 }
 section#mapSection{
 	padding: 5rem 0 !important;

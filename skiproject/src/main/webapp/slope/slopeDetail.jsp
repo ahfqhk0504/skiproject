@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           	<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services" style="color:#333;">이용요금/스키패스권</a>
+          		<a class="nav-link" href="/skiproject/charge/page" style="color:#333;">이용요금/스키패스권</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/skiproject/slope/page" style="color:#333;">슬로프안내</a>
