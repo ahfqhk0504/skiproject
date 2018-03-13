@@ -290,7 +290,7 @@
 			</div>
 			<div class="memberPone hide">
 				<table class="displayTable3">
-					<tr><td><input type="text" placeholder="핸드폰" name="memberPone"></td></tr>
+					<tr><td><input type="text" placeholder="핸드폰" name="memberPhone"></td></tr>
 				</table>
 			</div>
 		</div>
