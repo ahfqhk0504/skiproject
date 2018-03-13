@@ -13,15 +13,37 @@ header.chargehead{
 	overflow: hidden;
 }
 #chargeSection .price_tab li.on{
-	background-color: blue;
+	background-color: #173C8E;
 	color: #fff; 
+}
+#chargeSection .price_tab li.on a{
+	color: #fff;
 }
 #chargeSection .price_tab li{
 	float: left;
 	background-color: #e0e0e0;
 	color: #333;
 }
+#chargeSection .price_tab li a{
+	display: block;
+	width: 288px;
+	height: 51px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 45px;
+	text-align: center;
+}
+#chargeSection a:link,
+#chargeSection a:visited,
+#chargeSection a:hover, 
+#chargeSection a:active{
+	color:#707070;
+	text-decoration: none;
+}
 #chargeSection .tit2{
+	font-size: 16px;
+	margin-top: 30px;
+	color: #333;
 	font-weight: bold;
 }
 #chargeSection .price_div > p{
@@ -97,6 +119,7 @@ header.chargehead{
 	list-style: none;	
 }
 #chargeSection div,
+#chargeSection ul,
 #chargeSection tr,
 #chargeSection td,
 #chargeSection th,
@@ -107,7 +130,7 @@ header.chargehead{
 	text-align: left;
 }
 div{
-	display: 
+	display: block;
 }
 #chargeSection .chargeWrap{
 	margin: 0 auto;
@@ -123,6 +146,10 @@ h2.title{
     font-weight: 600;
     margin-bottom: 50px;  
 }
+.hidden{
+	display: none;
+}
+
 .chargeTitleWrap{
 	background: rgba(3,3,3,0.5);
 	margin: 0 auto;
