@@ -215,6 +215,10 @@
 					console.log(data.slopeDTO.slopeML);
 					$(".slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
 					
+					console.log(data.slopeDTO.slopeML);
+					$("#slopeWrap .map img").attr("src",data.slopeDTO.slopeMap);
+					
+					$("#slopeWrap .map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML).css("margin-top",data.slopeDTO.slopeMT);
 					$(".map .slopeSubInfo").css("display","block").css("margin-left",data.slopeDTO.slopeML+"px").css("margin-top",data.slopeDTO.slopeMT+"px");
 					$(".slopeSubInfo .slopeTitle").text(slopeTitleKor);
 					$(".slopeSubInfo .slopeName").text(data.slopeDTO.slopeName);
@@ -224,7 +228,6 @@
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeWidth").text(data.slopeDTO.slopeWidth);
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeSlopeAverage").text(data.slopeDTO.slopeSlopeAverage);
 					$(".slopeSubInfo .slopeSubInfoTable td.slopeSlopeMax").text(data.slopeDTO.slopeSlopeMax);
-					 
 				}
 			}); 
 		});

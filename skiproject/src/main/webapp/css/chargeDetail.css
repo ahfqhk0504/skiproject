@@ -8,3 +8,127 @@ header.chargehead{
     padding-bottom: 0;
     background-size: cover;
 }
+
+#chargeSection .price_tab{
+	overflow: hidden;
+}
+#chargeSection .price_tab li.on{
+	background-color: blue;
+	color: #fff; 
+}
+#chargeSection .price_tab li{
+	float: left;
+	background-color: #e0e0e0;
+	color: #333;
+}
+#chargeSection .tit2{
+	font-weight: bold;
+}
+#chargeSection .price_div > p{
+	padding: 0;
+	font: 12px/130% 'Nanum Gothic F',Nanum Gothic, ngwoff, ngeot, '돋움', dotum, "Helvetica","Arial",sans-serif;
+}
+#chargeSection .table_style3{
+	margin-top:6px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+#chargeSection .table_style3 tbody th{
+	color:#333;
+	border: 1px solid #d9dbdb;	
+}
+#chargeSection .table_style3 tbody td{
+	color: #707070;	
+}
+#chargeSection .table_style3 thead th{
+	color:#fff;
+	border: 1px solid #242a37;
+	background: #353d4e;
+}
+#chargeSection .table_style3 thead th.tit{
+	background: #505868;	
+}
+#chargeSection .table_style3 td{
+	border: 1px solid #d9dbdb;
+	font-size: 12px;
+}
+
+#chargeSection .table_style3 th{
+	font-size: 13px;
+	font-weight: bold;
+}
+#chargeSection .table_style3 th,
+#chargeSection .table_style3 td{
+	padding: 8px 10px 7px;
+	text-align: center;
+}
+
+
+#chargeSection tr,
+#chargeSection td{
+	display: table-cell;
+	vertical-align: inherit;
+}
+#chargeSection table caption{
+	width: 0;
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	overflow: hidden; 
+}
+#chargeSection thead{
+	display: table-header-group;
+	vertical-align: middle;
+}
+#chargeSection tr{
+	display: table-row;
+	vertical-align: inherit;
+}
+
+#chargeSection table, #chargeSection tr, #chargeSection td{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+#chargeSection ul, #chargeSection ol{
+	list-style: none;	
+}
+#chargeSection div,
+#chargeSection tr,
+#chargeSection td,
+#chargeSection th,
+#chargeSection thead{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	text-align: left;
+}
+div{
+	display: 
+}
+#chargeSection .chargeWrap{
+	margin: 0 auto;
+	width: 866px;
+}
+section#chargeSection{
+	padding: 5rem 0 !important;
+}
+h2.title{
+	position: relative;
+    height: 28px;
+    color:#fff !important;
+    font-weight: 600;
+    margin-bottom: 50px;  
+}
+.chargeTitleWrap{
+	background: rgba(3,3,3,0.5);
+	margin: 0 auto;
+}
+.subTitle{
+	font-size: 14px;
+	color: #e0e0e0;
+	margin-left: 30px;
+}

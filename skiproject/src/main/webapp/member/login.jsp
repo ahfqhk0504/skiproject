@@ -11,8 +11,22 @@
 	$(document).ready(function(){
 		$(".memberEmail").val("${memberEmail}");
 		//로그인 버튼
-		$(".loginBtn").click(function(){
-			document.loginForm.submit();
+		$("#loginBtn").click(function(){
+		 	document.loginForm.submit(); 
+			
+/* 			$.ajax({
+				url : "/skiproject/member/loginOk",
+				type:"POST",
+				data: {"memberEmail":memberEmail},
+				dataType : "json",
+				success : function(data){
+					$('#hiddenEmail').val(data.emailval);
+					//$('#hiddenCode').val(data.code);//히든코드를 인증번호를 넣음
+					code = data.code;
+					console.log(data.code);
+				}//success
+			});//ajax   */
+			
 		});
 		
 		//회원가입 버튼
@@ -22,6 +36,10 @@
 		//이메일 찾기 버튼
 		$("#emailFindBtn").click(function(){
 			window.location.href="http://localhost:8080/skiproject/member/emailFind"
+		});
+		//비밀번호 찾기 버튼
+		$("#passwordFindBtn").click(function(){
+			window.location.href="http://localhost:8080/skiproject/member/passwordFind"
 		});
 		
 	});
@@ -101,7 +119,14 @@
 		border : 1px solid #fff;
 		display: block;
 }
-
+ .mentDiv{
+	margin-top : 15px;
+	text-align: center;
+	color : #39597f;
+}
+.hide {
+	display : none;
+}
 </style>
 <body>
 <div class="loginMain">
@@ -114,6 +139,7 @@
 			<ul>
 				<li><input type="text" placeholder="위스키 이메일" name="memberEmail" class="memberEmail"> </li>
 				<li><input type="password" placeholder="비밀번호" name="memberPassword"> </li>
+				<li class="mentDiv hide">	<div class="ment" >해당 아이디를 찾을수 없습니다</div></li>
 			</ul>
 		</form>
 		<a>
@@ -122,7 +148,7 @@
 		<div class="loginLine1" style="margin-top:55px;"></div>
 		<div class="memberShip">아직도 WeSki 회원이 아니신가요? 가입하시고 다양한 혜택을 누리세요 <input type="button" value="회원 가입" class="weskiBtn" id="memberShipBtn"></div>
 		<div class="idPw">이메일, 비밀번호를 잊으셨나요? 아이디 비밀번호 찾기를 이용해보세요	<input type="button" value="이메일 찾기" class="weskiBtn" id="emailFindBtn">
-		<input type="button" value="비밀번호 찾기" class="weskiBtn"></div>
+		<input type="button" value="비밀번호 찾기" class="weskiBtn" id="passwordFindBtn"></div>
 	</div>
 	<div class="loginBottom">
 	

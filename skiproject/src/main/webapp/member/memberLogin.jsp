@@ -128,7 +128,7 @@
 			<span>로그인 기억하기</span>
 		</div>
 	
-		
+
 	<div class="login_button">
 		<input type="button"  class="login_btn" value="로그인">
 		<a href="#" class="member_find">아이디/비밀번호 찾기</a> 

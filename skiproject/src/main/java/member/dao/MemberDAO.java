@@ -13,5 +13,9 @@ public interface MemberDAO {
 	int idPwCheck(Map<String, String> map);
 
 	String emailFindAjax(Map<String, String> map);
+
+	int passwordFindEmail(Map<String, String> map);
+
+	void passwordModiOk(Map<String, String> map);
 	
 }

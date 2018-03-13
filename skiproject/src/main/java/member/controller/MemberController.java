@@ -3,8 +3,10 @@ package member.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.junit.runner.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
@@ -63,7 +65,6 @@ public class MemberController {
 					code += c;
 				}
 			}
-			
 			email.setContent("인증번호는 "+code+" 입니다.");
 			email.setSubject("WeSki 인증번호 입니다.");
 			email.setReceiver(memberEmail);
@@ -155,5 +156,73 @@ public class MemberController {
 		model.addAttribute("memberEmail",memberEmail);
 		return "/member/passwordFind";
 	}
+	
+	@RequestMapping(value="/passwordFindEmail", method=RequestMethod.POST)
+	public ModelAndView passwordFindEmail(Model model,@RequestParam String memberEmail,@RequestParam String memberName) throws Exception{
+		System.out.println(memberEmail);
+		System.out.println(memberName);
+		
+		Map<String,String> map = new HashMap <String,String>();
+		int emailOk=0;
+		String msg = null;
+		String color = null;
+		
+		map.put("memberEmail", memberEmail);
+		map.put("memberName", memberName);
+		
+		emailOk = memberDAO.passwordFindEmail(map);
+		
+		System.out.println("디비는 잘쳤고 결과는 : "+emailOk);
+		
+		if(emailOk==0) {
+			ModelAndView mav = new ModelAndView();
+			msg = "일치하는 정보가 없습니다.";
+			color = "#d83636";
+			mav.addObject("msg", msg);
+			mav.addObject("color", color);
+			mav.setViewName("jsonView");
+			return mav;
+		}else {
+		
+			//인증코드 생성부분
+			String code = "";
+			for (int i = 0; i < 2; i++) {
+				int num = (int) (Math.random() * 9) + 1;
+				code += num + "";
+				
+				for (int j = 0; j < 2; j++) {
+					char c = (char) ((Math.random() * 26) + 65);
+					code += c;
+				}
+			}
+			email.setContent("인증번호는 "+code+" 입니다.");
+			email.setSubject("WeSki 인증번호 입니다.");
+			email.setReceiver(memberEmail);
+			System.out.println("email="+email);
+			emailSender.SendEmail(email);
+			
+			ModelAndView mav = new ModelAndView();
+			msg = "인증번호가 전송되었습니다.";
+			color = "#6d63ec";
+			mav.addObject("memberEmail", memberEmail);
+			mav.addObject("code", code);
+			mav.addObject("msg", msg);
+			mav.addObject("color", color);
+			mav.setViewName("jsonView");
+			return mav;
+		}
+	}
+	@RequestMapping(value="/passwordModiOk", method=RequestMethod.POST)
+	public String passwordModiOk(Model model,@RequestParam Map<String,String> map){
+		
+		System.out.println("비번수정 이멜 : "+ map.get("memberEmail"));
+		System.out.println("비번수정 비번 : "+map.get("memberPassword"));
+		System.out.println("1");
+		memberDAO.passwordModiOk(map);
+		System.out.println("2");
+		
+		return "/member/login";
+	}
+	
 	
 }

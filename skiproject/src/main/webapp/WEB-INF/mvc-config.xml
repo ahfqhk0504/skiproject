@@ -20,10 +20,6 @@
 	<context:component-scan base-package="main.controller" />
 	<context:component-scan base-package="member.controller" />
 	
-	<mvc:view-controller path="/main2/index" view-name="/main2/index" />
-	
-	
-	
 	<mvc:resources mapping="/**" location="/" />
 	<mvc:resources mapping="/slope/**" location="/slope/" />
 	

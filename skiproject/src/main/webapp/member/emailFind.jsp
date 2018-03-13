@@ -13,21 +13,43 @@
 			var memberName = $(".emailFindName").val();
 			var memberBirth= $(".emailFindBirth").val();
 			var memberPhone= $(".emailFindPhone").val();
-			$.ajax({
-				url : "/skiproject/member/emailFindAjax",
-				type:"POST",
-				data: {"memberName":memberName,
-					"memberBirth":memberBirth,
-					"memberPhone":memberPhone},
-				dataType : "json",
-				success : function(data){
-					$(".emailTextTd").html(data.FindEmail);
-					if(data.Check!=("no")){
-						alert("들어옴");
-						$(".Btn").removeClass("hide");
-					} 
-				}//success
-			});//ajax  
+			var ok;
+			ok = blank();
+			if(ok==0){
+		 	$.ajax({
+					url : "/skiproject/member/emailFindAjax",
+					type:"POST",
+					data: {"memberName":memberName,
+						"memberBirth":memberBirth,
+						"memberPhone":memberPhone},
+					dataType : "json",
+					success : function(data){
+						$(".emailTextTd").html(data.FindEmail);
+						if(data.Check!=("no")){
+							alert("들어옴");
+							$(".Btn").removeClass("hide");
+						} 
+					}//success
+				});//ajax   
+			}
+		});
+		$(".emailFindName").keyup(function(){
+			blank();
+		});
+		$(".emailFindBirth").keyup(function(){
+			blank();
+		});
+		$(".emailFindPhone").keyup(function(){
+			blank();
+		});
+		$(".emailFindName").click(function(){
+			blank();
+		});
+		$(".emailFindBirth").click(function(){
+			blank();
+		});
+		$(".emailFindPhone").click(function(){
+			blank();
 		});
 		$(".loginBtn").click(function(){
 			window.location.href="http://localhost:8080/skiproject/member/login?memberEmail="+$(".emailTextTd").html()+"";
@@ -35,8 +57,32 @@
 		$(".pwFindBtn").click(function(){
 			window.location.href="http://localhost:8080/skiproject/member/passwordFind?memberEmail="+$(".emailTextTd").html()+"";
 		});
-		
 	});
+	
+	function blank(){
+		var blank =0;
+		
+		 if($('.emailFindPhone').val().length==0){
+				$(".emailTextTd").html("핸드폰번호 적어 ");
+				$(".emailTextTd").css("color","red");
+				blank = 1;
+		 }
+		 if($('.emailFindBirth').val().length==0){
+				$(".emailTextTd").html("생일 빠졌어");
+				$(".emailTextTd").css("color","red");
+				blank = 1;
+			 }
+		 if($('.emailFindName').val().length==0){
+				$(".emailTextTd").html("이름이 비었어");
+				$(".emailTextTd").css("color","red");
+				blank = 1;
+			 }
+		if(blank==0){
+			$(".emailTextTd").html("");
+			$(".emailTextTd").css("color","black");
+		}
+		return blank;
+	}
 </script>
 <style type="text/css">
 	.emailFindBady{
@@ -57,8 +103,6 @@
 		    width: 450px;
 		    font-size: 20px;
 	}
-	
-	    
 	  .findContext  input[type="text"]{
 	    	width: 326px;
 		    height: 42px;
