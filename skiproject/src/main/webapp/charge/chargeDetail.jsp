@@ -46,11 +46,11 @@
     	<div class="chargeWrap">
     	<div class="price_wrap">	
 			<ul class="price_tab price_tab3">
-				<li class="on"><a href="#none">스키장</a></li>
-				<li class=""><a href="#none">렌탈/수리실/보관소</a></li>
-				<li class=""><a href="#none">스키/보드학교</a></li>
+				<li class="hd1 on"><a href="#none">스키장</a></li>
+				<li class="hd2"><a href="#none">렌탈/수리실/보관소</a></li>
+				<li class="hd3"><a href="#none">스키/보드학교</a></li>
 			</ul>
-			<div class="price_div">
+			<div class="price_div hd1div">
 				<h5 class="hidden">2017/18 스키장 종합가격표</h5>
 				<h6 class="tit2">2017/18 스키장 종합가격표</h6>
                 <p style="text-align:right;">(단위 : 원)</p>
@@ -148,7 +148,7 @@
 					※ 소인기준: 만4세 ~ 만12세<br>
 					※ 만4세 미만은 리프트권 및 스키패스 판매하지 않음(안전사고예방)
 				</p>				<!--<p>		
-				* 지역주민(4개시 ‧ 군 : 태백, 정선, 영월, 삼척) 스키패스권은 현재기준 6개월 이상 해당지역에 거주한 지역주민에 한해 해당사실을 증명할 수 있는 서류를 지참하셔야 할인적용 가능합니다. (스키패스권 발급일자로부터 3개월 이내에 발급된 주민등록초본 등) <br/>* 지역주민 스키패스권은 양도양수 불가합니다.
+				* 지역주민(4개시???군?:?태백,?정선,?영월,?삼척)?스키패스권은 현재기준 6개월 이상 해당지역에 거주한 지역주민에 한해 해당사실을 증명할 수 있는 서류를 지참하셔야 할인적용 가능합니다. (스키패스권 발급일자로부터 3개월 이내에 발급된 주민등록초본 등) <br/>* 지역주민 스키패스권은 양도양수 불가합니다.
 			  </p>	-->
 			  <div class="btnType02" style="margin-top:-20px;">
 				<a href="http://high1.com/fileManager/link-download.high1?file=ski_userpolicy.hwp" title="파일다운로드" class="s_btn3">스키패스권 이용약관</a>
@@ -291,7 +291,7 @@
 				<p>※ 중복할인 불가</p>
 			</div>
 			
-		  <div class="price_div hidden">
+		  <div class="price_div hd2div hidden">
 				<div style="width:49%; margin-right:2%; float:left; clear:none">
 				<h5 class="hidden">렌탈/수리실/보관소</h5>
 				<h6 class="tit2">스키&amp;보드 대여</h6>
@@ -680,7 +680,7 @@
 				</table>
 				<p>※ 스키패스권 소지자 外 기본할인 없음</p>
 			</div>
-            <div class="price_div hidden">
+            <div class="price_div hd3div hidden">
 				<h5 class="hidden">렌탈요금</h5>
 				<h6 class="tit2 skischool">스키학교 요금</h6>
 				<h6 class="tit2 skischool" style=" float:right;">보드학교 요금</h6>
@@ -1115,25 +1115,12 @@
 	$(document).ready(function(){
 		
 		$(".price_tab li").click(function(){
-			var div1 = $(".price_tab").next();
-			var div2 = div1.next(); 
-			var div3 = div2.next();
 			$(".price_tab li").removeClass("on"); 
+			$(".hd1div").addClass("hidden");
+			$(".hd2div").addClass("hidden");
+			$(".hd3div").addClass("hidden"); 
+			$("."+$(this).attr("class")+"div").removeClass("hidden");
 			$(this).addClass("on");
-			if($(".price_tab li:nth-child(1)").attr("class") == "on"){
-				div1.removeClass("hidden");
-				div2.addClass("hidden");
-				div3.addClass("hidden");
-			}else if($(".price_tab li:nth-child(2)").attr("class") == "on"){
-				div1.addClass("hidden");
-				div2.removeClass("hidden");
-				div3.addClass("hidden");
-			}else if($(".price_tab li:nth-child(3)").attr("class") == "on"){
-				div1.addClass("hidden");
-				div2.addClass("hidden");
-				div3.removeClass("hidden");
-			}
 		}); 
-		
 	});
 </script>
