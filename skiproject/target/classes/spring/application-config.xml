@@ -20,7 +20,9 @@
 		<property name="maxActive" value="20" />
 		<property name="maxIdle" value="3" />
 	</bean>   -->
-	
+	<!-- admin -->
+	<context:component-scan base-package="admin.bean" />
+	<context:component-scan base-package="admin.dao" />
 	<!-- slope -->
 	<context:component-scan base-package="slope.bean" />
 	<context:component-scan base-package="slope.dao" />

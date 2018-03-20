@@ -33,7 +33,6 @@ public class MemberController {
 		
 		@RequestMapping(value="/membership", method=RequestMethod.GET)
 		public String membership(Model model){
-			
 			return "/member/membership";
 		}
 		
