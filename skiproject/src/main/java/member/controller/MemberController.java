@@ -53,7 +53,7 @@ public class MemberController {
 		
 		@RequestMapping(value="/checkEmail", method=RequestMethod.POST)
 		public ModelAndView checkEmail(Model model,@RequestParam String memberEmail) throws Exception{
-			
+			String msg;
 			//인증코드 생성부분
 			String code = "";
 			for (int i = 0; i < 2; i++) {
@@ -69,11 +69,12 @@ public class MemberController {
 			email.setSubject("WeSki 인증번호 입니다.");
 			email.setReceiver(memberEmail);
 			System.out.println("email="+email);
-			emailSender.SendEmail(email);
+			msg=emailSender.SendEmail(email);
 			
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("memberEmail", memberEmail);
 			mav.addObject("code", code);
+			mav.addObject("msg", msg);
 			mav.setViewName("jsonView");
 			return mav;
 		}

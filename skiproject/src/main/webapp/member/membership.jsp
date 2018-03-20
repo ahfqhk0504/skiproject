@@ -5,55 +5,46 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
 <script >
 	$(document).ready(function(){ 
+		/*  /[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi; 특수문자 제한 정규식
+		/[^a-zA-Z0-9_]/; 영어,숫자정규식 /[^a-z0-9_-]/;
+		/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;  이메일 정규식
+		8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+		 */
+		
 		var code;
-		$(".clickEmailPw").click(function(){
-			$("#tableNum").val(0);
-			$(".nameGenderBirth").addClass("hide");
-			$(".memberAddress").addClass("hide");
-			$(".memberPone").addClass("hide");
-			$(".emailPw").removeClass("hide");
-			$(".nextBtn").css("margin-top",$(".displayTable0").height()-39);
-		});
+		var msg;
+		var sc =/[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+		var en =/^[a-z0-9_-]{5,20}$/;
+		var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i; 
+		var notKor = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{8,20}$/g;
+		var checkPw = /^(?=.*[a-zA-Z])(?=.*[\~\․\!\@\#\$\%\^\&\*\(\)\_\-\+\=\[\]\|\\\;\:\\'\"\<\>\,\.\?\/])(?=.*[0-9]).{8,16}$/;
+		var name = /^[a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣| |]{2,20}$/;
+		var name2 = /^[a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣]{2,20}$/;
+		var phone = /^01([0|1|6|7|8|9])([0-9]{7,8})$/;
+		var brt = /^([0-2{1}])(0|1|9{1})(?:[0-9]{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))$/;
 		
-		$(".clickNameGenderBirth").click(function(){
-			var tableNum1;
-			$("#tableNum").val(1);
-			$(".emailPw").addClass("hide");
-			$(".memberAddress").addClass("hide");
-			$(".memberPone").addClass("hide");
-			$(".nameGenderBirth").removeClass("hide");
-			$(".nextBtn").css("margin-top",$(".displayTable1").height()-39);
-			
-		});
 		
-		$(".clickMemberAddress").click(function(){
-			$("#tableNum").val(2);
-			
-			$(".nameGenderBirth").addClass("hide");
-			$(".emailPw").addClass("hide");
-			$(".memberPone").addClass("hide");
-			$(".memberAddress").removeClass("hide");
-			$(".nextBtn").css("margin-top",$(".displayTable2").height()-39);
-		});
+
+
 		
-		$(".clickMemberPone").click(function(){
-			$("#tableNum").val(3);
-			$(".nameGenderBirth").addClass("hide");
-			$(".memberAddress").addClass("hide");
-			$(".emailPw").addClass("hide");
-			$(".memberPone").removeClass("hide");
-			
-			$(".nextBtn").css("margin-top",$(".displayTable3").height()-39);
-		});
 	
+
+		
 		$(".memberShipBtn").click(function(){
 			
 			document.membershipForm.submit();
 		});
 		$("#emailAuthentication").click(function(){
 			var memberEmail=$("#memberEmail1").val()+"@"+$("#memberEmail2").val();
-			$("#emailAuthenticationCodeBtn").css("background-color","#409b57");
+			if(regExp.test(memberEmail)==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("이메일을 다시한번 확인해 주세요");
+				return;
+			}
+			
 			$("#emailAuthenticationCodeBtn").attr("disabled",false);
+			$("#memberEmail1").attr("readonly",true);
+			$("#memberEmail2").attr("readonly",true);
 			
 			
 			if($("#memberEmail2").val()==("naver.com")){
@@ -79,34 +70,117 @@
 					$('#hiddenEmail').val(data.emailval);
 					//$('#hiddenCode').val(data.code);//히든코드를 인증번호를 넣음
 					code = data.code;
+					msg = data.msg;
 					console.log(data.code);
+					alert(msg);
+					if(data.msg=="ok"){
+						$(".warningDiv").css("color","#409b57");
+						$(".warningDiv").html("인증번호가 해당 이메일로 전송되었습니다.");
+					}else{
+						$(".warningDiv").css("color","#d83636");
+						$(".warningDiv").html("전송 불가능한 이메일입니다.");
+					}
+					/* 이메일이 발송되었습니다.
+					이메일 전송실패. */
 				}//success
 			});//ajax  
 		});
 		$("#emailAuthenticationCodeBtn").click(function(){
 
 				if($("#emailAuthenticationCode").val()==code){
-					$("#memberEmail1").attr("readonly",true);
-					$("#memberEmail2").attr("readonly",true);
+					
 					$("#hiddenEmail").val("ok");
+					$("#emailAuthenticationCodeBtn").val("인증 완료");
+					$("#emailAuthenticationCodeBtn").css("background-color","#409b57");
+					$("#memberEmail1").attr("readonly",false);
+					$("#memberEmail2").attr("readonly",false);
 					alert("인증완료");
 				}else{
 					alert("응 아니야");
+					$("#emailAuthenticationCodeBtn").css("background-color","#d83636");
+					$("#memberEmail1").attr("readonly",false);
+					$("#memberEmail2").attr("readonly",false);
 				}
 		});
-		$(".nextBtn").click(function(){
-			/* alert($("#tableNum").val());
-			alert($(".displayTable0").offset().top);
-			alert($(".displayTable0").height()); */
-			
-			
-			
+	
+		$("#memberEmail1").keyup(function(){
+			if(en.test($("#memberEmail1").val())==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("	공백 없이 5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.");
+			}else{
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("사용가능한 이메일 입니다.");
+			}
 		});
+		$("#memberPassword").keyup(function(){
+			if(checkPw.test($("#memberPassword").val())==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("8~16자 영문 대 소문자, 숫자, 특수문자를 &nbsp; &nbsp;필수로 사용해주세요.");
+			}else{
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("사용가능한 비밀번호 입니다.");
+			}
+		});
+	$("#reMemberPassword").keyup(function(){
+		var eml = $("#memberPassword").val();
+		var reml = $("#reMemberPassword").val();
+		if(eml.length==reml.length ){
+			if(eml == reml){
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("비밀번호 재확인 완료.");
+			}else{
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("비밀번호와 재확인이 일치하지 않습니다");
+			} 
+		}
+		}); 
+	$("#memberName").keyup(function(){
+		var nameleng = $("#memberName").val();
+		
+		
+		if(nameleng.length==2){
+			
+			if(name2.test($("#memberName").val())==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("이름은 한글 , 영문 2~20 글자 이내로입력해 주세요 두글자이하는 공백을 사용하실수 없습니다.");
+			}else{
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("멋진 이름이네요 ");
+			}
+		}else{
+			if(name.test($("#memberName").val())==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("이름은 한글 , 영문 2~20 글자 이내로입력해 주세요");
+			}else{
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("멋진 이름이네요 ");
+			}
+		}
+	});
+	$("#memberPhone").keyup(function(){
+		if(phone.test($("#memberPhone").val())==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("올바른 휴대폰 번호를 입력해주세요");
+			}else{
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("사용가능한 번호 입니다. ");
+			}
+	});
+	
+	$("#memberBirth").keyup(function(){
+		if(brt.test($("#memberBirth").val())==false){
+				$(".warningDiv").css("color","#d83636");
+				$(".warningDiv").html("올바른 생년월일을 입력해주세요");
+			}else{
+				$(".warningDiv").css("color","#409b57");
+				$(".warningDiv").html("멋진날 태어나셨군요~ ");
+			} 
+	});
+	
 	});
 </script>
 <style type="text/css">
 	.membershipBody{
-	    border: 1px solid blue;
 	    width: 1000px;
 	    height: 1000px;
 	    position: absolute;
@@ -117,21 +191,36 @@
     	height: 40px;
 	}
 	.memberDisplay{
-		border: 1px solid red;
 	    display: inline-block;
-	    height: 300px;
-	    width: 600px;
-	    margin: 50px 70px;
-	    position: absolute;
+	    height: 700px;
+	    width: 400px;
+	    margin: 50px 0px 2px 70px;
+	    position: relative;
 	}
-
-	.membershipMenu{
-		border: 1px solid red;
-		display: inline-block;	
-		width: 150px;
-		height : 200px;
-		margin-left: 671px;
-   		margin-top: 50px;
+	.warningDiv{
+	    display: inline-block;
+	    height: 200px;
+	    width: 420px;
+	    position: absolute;
+	    margin-top: 62px;
+	    font-size: 21px;
+	   	color: #d83636;
+	}
+	.memberDisplay input[type="text"]{
+		width: 326px;
+	    height: 42px;
+	    border-radius: 8px;
+	    color: #494949;
+	    outline: none;
+	    font-size: 16px;
+	}
+	.memberDisplay input[type="password"]{
+		width: 326px;
+	    height: 42px;
+	    border-radius: 8px;
+	    color: #494949;
+	    outline: none;
+	    font-size: 30px;
 	}
 	.membershipMenu lable {
 		cursor: pointer;
@@ -143,30 +232,6 @@
 	    color: #494949;
 	    outline: none;
 	    font-size: 30px;
-	}
-	.nameGenderBirth input[type="text"]{
-		width: 326px;
-	    height: 42px;
-	    border-radius: 8px;
-	    color: #494949;
-	    outline: none;
-	    font-size: 16px;
-	}
-	.memberAddress input[type="text"]{
-		width: 326px;
-	    height: 42px;
-	    border-radius: 8px;
-	    color: #494949;
-	    outline: none;
-	    font-size: 16px;
-	}
-	.memberPone input[type="text"]{
-		width: 326px;
-	    height: 42px;
-	    border-radius: 8px;
-	    color: #494949;
-	    outline: none;
-	    font-size: 16px;
 	}
 	#memberEmail1{
 		width: 200px;
@@ -184,7 +249,6 @@
 	    outline: none;
 	    font-size: 17px;
 	}
-	
 	.memberEmail1Td{
 		width: 220px;
     	display: inline-block;
@@ -243,6 +307,32 @@
 	    cursor: pointer;
 	    background-color: #d83636;
     }
+    #emailAuthenticationCodeBtn:active{
+    	position:relative;
+		top:3px;
+    } 
+    #emailAuthentication:active{
+    	position:relative;
+		top:3px;
+    }
+    .memberShipBtn{
+	   	width: 330px;
+	    height: 42px;
+	    border-radius: 8px;
+	    color: #ffffff;
+	    font-size: 14px;
+	    outline: none;
+	    border: 0;
+	    outline: 0;
+	    cursor: pointer;
+	    background-color: #d83636;
+    }
+	.memberShipBtn:active{
+    	position:relative;
+		top:3px;
+    }
+    
+   
 </style>
 
 <head>
@@ -252,8 +342,6 @@
 	<h3>회원가입</h3>
 	<form name="membershipForm" method="post" action="/skiproject/member/membershipOk/">
 		<div class="memberDisplay">
-			<label class="nextBtn"><img src="https://user-images.githubusercontent.com/35482994/35262301-694560aa-0057-11e8-82b9-85b0306e1ca7.png"></label>
-			<div class="emailPw">
 				<table class="displayTable0">
 					<tr>
 						<td class="memberEmail1Td"><input type="text" id="memberEmail1" placeholder="이메일" name="memberEmail1">@</td>
@@ -266,47 +354,18 @@
 						<td id="emailAuthenticationCodeTd"><input type="text" id="emailAuthenticationCode"  name="emailAuthenticationCode"  placeholder="이메일 인증 코드"></td>
 						<td id="emailAuthenticationCodeBtnTd"><input type="button" id="emailAuthenticationCodeBtn"  name="emailAuthenticationCodeBtn" value="이메일 인증" disabled="true"></td>
 					</tr>
-					<tr>
-						<td><input type="password" id="memberPassword" placeholder="비밀번호" name="memberPassword"></td>
-					</tr>
-					<tr>
-						<td><input type="password" id="ReMemberPassword" placeholder="비밀번호 확인"></td>
-					</tr>
-				</table>
-			</div>
-			<div class="nameGenderBirth hide">
-				<table class="displayTable1">
-					<tr><td><input type="text" placeholder="이름" name="memberName" ></td></tr>
-					<tr><td><input type="text" placeholder="생일 ex)19900101" name="memberBirth"></td></tr>
-					<tr><td><input type="text" placeholder="나이 숫자만 입력해주세요" name="memberPone"></td></tr>
-				</table>
-			</div>
-			<div class="memberAddress hide">
-				<table class="displayTable2">
+					<tr><td><input type="password" id="memberPassword" placeholder="비밀번호" name="memberPassword"></td></tr>
+					<tr><td><input type="password" id="reMemberPassword" placeholder="비밀번호 확인"></td></tr>
+					<tr><td><input type="text" id="memberName"placeholder="이름" name="memberName" ></td></tr>
+					<tr><td><input type="text" id="memberBirth" placeholder="생일 ex)19900101" name="memberBirth"></td></tr>
 					<tr><td><input type="text" placeholder="우편번호" name="memberAddressNum" ></td></tr>
 					<tr><td><input type="text" placeholder="주소" name="memberAddress1"></td></tr>
 					<tr><td><input type="text" placeholder="상세 주소" name="memberAddress2"></td></tr>
+					<tr><td><input type="text" id="memberPhone" placeholder="핸드폰" name="memberPhone"></td></tr>
+					<tr><td><input type="button" value="회원가입" class="memberShipBtn"></td></tr>
 				</table>
 			</div>
-			<div class="memberPone hide">
-				<table class="displayTable3">
-					<tr><td><input type="text" placeholder="핸드폰" name="memberPhone"></td></tr>
-				</table>
-			</div>
-		</div>
-		<div class="membershipMenu">
-			<table class="displayTable">
-				<tr><td><lable class="clickEmailPw">이메일&비밀번호</lable></td></tr>
-				<tr><td><lable class="clickNameGenderBirth">이름&성별&생일 </lable></td></tr>
-				<tr><td><lable class="clickMemberAddress">주소</lable></td></tr>
-				<tr><td><lable class="clickMemberPone">휴대폰</lable></td></tr>
-			</table>
-			<div class="memberShipBtnDiv">
-				<input type="button" value="회원가입" class="memberShipBtn">
-			</div>
-		</div>
-		
-		<input type="hidden" value="1" class="displayNum" >
+			<div class="warningDiv">여기에 경고문구가 뜬다</div>
 		<input type="hidden"  id="hiddenEmail" >
 		<input type="hidden"  id="hiddenCode" >
 		<input type="hidden" id="tableNum" value="0">
