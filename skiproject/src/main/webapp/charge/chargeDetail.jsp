@@ -46,7 +46,11 @@
     	<div class="chargeWrap">
     	<div class="price_wrap">	
 			<ul class="price_tab price_tab3">
+<<<<<<< HEAD
 				<li class="hd1"><a href="#none">스키장</a></li>
+=======
+				<li class="hd1 on"><a href="#none">스키장</a></li>
+>>>>>>> branch 'master' of https://github.com/ahfqhk0504/skiproject.git
 				<li class="hd2"><a href="#none">렌탈/수리실/보관소</a></li>
 				<li class="hd3"><a href="#none">스키/보드학교</a></li>
 			</ul>
@@ -148,7 +152,7 @@
 					※ 소인기준: 만4세 ~ 만12세<br>
 					※ 만4세 미만은 리프트권 및 스키패스 판매하지 않음(안전사고예방)
 				</p>				<!--<p>		
-				* 지역주민(4개시 ‧ 군 : 태백, 정선, 영월, 삼척) 스키패스권은 현재기준 6개월 이상 해당지역에 거주한 지역주민에 한해 해당사실을 증명할 수 있는 서류를 지참하셔야 할인적용 가능합니다. (스키패스권 발급일자로부터 3개월 이내에 발급된 주민등록초본 등) <br/>* 지역주민 스키패스권은 양도양수 불가합니다.
+				* 지역주민(4개시???군?:?태백,?정선,?영월,?삼척)?스키패스권은 현재기준 6개월 이상 해당지역에 거주한 지역주민에 한해 해당사실을 증명할 수 있는 서류를 지참하셔야 할인적용 가능합니다. (스키패스권 발급일자로부터 3개월 이내에 발급된 주민등록초본 등) <br/>* 지역주민 스키패스권은 양도양수 불가합니다.
 			  </p>	-->
 			  <div class="btnType02" style="margin-top:-20px;">
 				<a href="http://high1.com/fileManager/link-download.high1?file=ski_userpolicy.hwp" title="파일다운로드" class="s_btn3">스키패스권 이용약관</a>
@@ -1114,10 +1118,19 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".price_tab li").click(function(){
+<<<<<<< HEAD
 			$(".hd1div").addClass("hidden");
 			$(".hd2div").addClass("hidden");
 			$(".hd3div").addClass("hidden"); 
 			$("."+$(this).attr("class")+"div").removeClass("hidden");
+=======
+			$(".price_tab li").removeClass("on"); 
+			$(".hd1div").addClass("hidden");
+			$(".hd2div").addClass("hidden");
+			$(".hd3div").addClass("hidden"); 
+			$("."+$(this).attr("class")+"div").removeClass("hidden");
+			$(this).addClass("on");
+>>>>>>> branch 'master' of https://github.com/ahfqhk0504/skiproject.git
 		}); 
 	});
 </script>

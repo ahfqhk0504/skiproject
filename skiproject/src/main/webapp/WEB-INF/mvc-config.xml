@@ -14,7 +14,7 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <property name="suffix" value=".jsp"/>
 	</bean>
-	
+	<context:component-scan base-package="admin.controller" />
 	<context:component-scan base-package="charge.controller" />
 	<context:component-scan base-package="slope.controller" />
 	<context:component-scan base-package="main.controller" />

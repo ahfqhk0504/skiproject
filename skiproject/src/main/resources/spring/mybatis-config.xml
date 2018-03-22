@@ -11,5 +11,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="member/dao/memberMapper.xml"/>
 		<mapper resource="slope/dao/slopeMapper.xml"/>
+		<mapper resource="admin/dao/adminMapper.xml" />
 	</mappers>
 </configuration>
