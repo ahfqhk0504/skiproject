@@ -87,11 +87,11 @@ public class MemberController {
 		}
 		
 		@RequestMapping(value="/loginOk", method=RequestMethod.POST) 
-		public String loginOk(Model model , @RequestParam String memberEmail , @RequestParam String memberPassword){
-			
+		public ModelAndView loginOk(Model model , @RequestParam String memberEmail , @RequestParam String memberPassword){
+			ModelAndView mav = new ModelAndView();
 			int idCheck=0;
 			String Notice =null;
-			
+		
 			System.out.println(memberEmail+","+memberPassword);
 			Map <String,String>map = new HashMap<String,String>();
 			map.put("memberEmail", memberEmail);
@@ -100,21 +100,18 @@ public class MemberController {
 			idCheck=memberDAO.idCheck(memberEmail);
 			
 			if(idCheck==0) {
-				Notice ="해당 아이디를 찾을수 없습니다";
-				model.addAttribute("Notice",Notice);
-				return "/member/loginOk";
+				Notice ="해당 이메일을 찾을수 없습니다";
+				
 			}else{
 				idCheck=memberDAO.idPwCheck(map);
 				 if(idCheck==0) {
 					 Notice ="비밀번호가 틀렸엉";
-						model.addAttribute("Notice",Notice);
-						return "/member/loginOk";
-				 }else {
-					 Notice ="로그인 성공";
-						model.addAttribute("Notice",Notice);
-						return "/member/loginOk";
 				 }
 			}
+			mav.addObject("idCheck", idCheck);
+			mav.addObject("Notice",Notice);
+			mav.setViewName("jsonView");
+			return mav;
 		}
 		@RequestMapping(value="/emailFind", method=RequestMethod.GET)
 		public String emailFind(Model model){

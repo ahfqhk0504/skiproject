@@ -17,7 +17,7 @@
               <a class="nav-link" href="/skiproject/slope/page">슬로프안내</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">객실예약</a>
+              <a class="nav-link js-scroll-trigger" href="/skiproject/room/page">객실예약</a>
             </li>
           </ul>
         </div>

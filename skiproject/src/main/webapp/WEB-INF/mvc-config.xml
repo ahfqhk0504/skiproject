@@ -19,6 +19,7 @@
 	<context:component-scan base-package="slope.controller" />
 	<context:component-scan base-package="main.controller" />
 	<context:component-scan base-package="member.controller" />
+		<context:component-scan base-package="room.controller" />
 	
 	<mvc:resources mapping="/**" location="/" />
 	<mvc:resources mapping="/slope/**" location="/slope/" />

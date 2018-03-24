@@ -12,21 +12,28 @@
 		$(".memberEmail").val("${memberEmail}");
 		//로그인 버튼
 		$("#loginBtn").click(function(){
-		 	document.loginForm.submit(); 
-			
-/* 			$.ajax({
-				url : "/skiproject/member/loginOk",
-				type:"POST",
-				data: {"memberEmail":memberEmail},
-				dataType : "json",
-				success : function(data){
-					$('#hiddenEmail').val(data.emailval);
-					//$('#hiddenCode').val(data.code);//히든코드를 인증번호를 넣음
-					code = data.code;
-					console.log(data.code);
-				}//success
-			});//ajax   */
-			
+			if($(".memberEmail").val()==""){
+				$(".ment").html("이메일을 입력해주세요.");
+				$(".mentDiv").slideDown(300);
+			}else if($(".memberPassword").val()==""){
+				$(".ment").html("비밀번호를 입력해주세요");
+				$(".mentDiv").slideDown(300);
+			}else{
+				 $.ajax({
+						url:"/skiproject/member/loginOk",
+						data: {"memberEmail" :$(".memberEmail").val(),
+								 "memberPassword" : $(".memberPassword").val()},
+						type:"POST",
+						dataType:"json",
+						success:function(data){
+							$(".ment").html(data.Notice);
+							$(".mentDiv").slideDown(300);
+							if(data.idCheck==1){
+								document.loginForm.submit();
+							}
+						}
+				 });
+			}
 		});
 		
 		//회원가입 버튼
@@ -123,6 +130,7 @@
 	margin-top : 15px;
 	text-align: center;
 	color : #39597f;
+	display: none;
 }
 .hide {
 	display : none;
@@ -135,11 +143,11 @@
 	<div class="loginBackguround">
 		<div class="loginLine2"></div>
 		<div class="loginLine1" style="margin-top:1.5px;"></div>
-		<form class="loginForm" method="post" action="/skiproject/member/loginOk/" name="loginForm">
+		<form class="loginForm" method="post" action="/skiproject/main/index" name="loginForm">
 			<ul>
 				<li><input type="text" placeholder="위스키 이메일" name="memberEmail" class="memberEmail"> </li>
-				<li><input type="password" placeholder="비밀번호" name="memberPassword"> </li>
-				<li class="mentDiv hide">	<div class="ment" >해당 아이디를 찾을수 없습니다</div></li>
+				<li><input type="password" placeholder="비밀번호" name="memberPassword" class="memberPassword"> </li>
+				<li class="mentDiv">	<div class="ment" >해당 아이디를 찾을수 없습니다</div></li>
 			</ul>
 		</form>
 		<a>
