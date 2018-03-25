@@ -46,11 +46,8 @@
     	<div class="chargeWrap">
     	<div class="price_wrap">	
 			<ul class="price_tab price_tab3">
-<<<<<<< HEAD
 				<li class="hd1"><a href="#none">스키장</a></li>
-=======
 				<li class="hd1 on"><a href="#none">스키장</a></li>
->>>>>>> branch 'master' of https://github.com/ahfqhk0504/skiproject.git
 				<li class="hd2"><a href="#none">렌탈/수리실/보관소</a></li>
 				<li class="hd3"><a href="#none">스키/보드학교</a></li>
 			</ul>
@@ -1118,19 +1115,16 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".price_tab li").click(function(){
-<<<<<<< HEAD
 			$(".hd1div").addClass("hidden");
 			$(".hd2div").addClass("hidden");
 			$(".hd3div").addClass("hidden"); 
 			$("."+$(this).attr("class")+"div").removeClass("hidden");
-=======
 			$(".price_tab li").removeClass("on"); 
 			$(".hd1div").addClass("hidden");
 			$(".hd2div").addClass("hidden");
 			$(".hd3div").addClass("hidden"); 
 			$("."+$(this).attr("class")+"div").removeClass("hidden");
 			$(this).addClass("on");
->>>>>>> branch 'master' of https://github.com/ahfqhk0504/skiproject.git
 		}); 
 	});
 </script>
